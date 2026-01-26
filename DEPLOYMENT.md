@@ -153,9 +153,52 @@ We'll use Neon's free PostgreSQL database for this deployment.
    - Add your custom domain (e.g., `freguesia.pt`)
    - Follow DNS configuration instructions
 
-## Troubleshooting
+## Step 7: Verify Environment Variables (CRITICAL)
 
-### Build Fails
+If you see a **404 NOT_FOUND** error after deployment, the most common cause is missing or incorrect environment variables. Follow these steps:
+
+### Check Environment Variables in Vercel
+
+1. **Go to Vercel Dashboard** → Your Project → **Settings** → **Environment Variables**
+
+2. **Verify ALL three variables are set**:
+   - ✅ `DATABASE_URL` - Your Neon PostgreSQL connection string
+   - ✅ `NEXTAUTH_SECRET` - Your generated secret
+   - ✅ `NEXTAUTH_URL` - Your Vercel deployment URL
+
+3. **Check DATABASE_URL format**:
+   ```
+   postgresql://username:password@ep-xxx.region.aws.neon.tech/neondb?sslmode=require
+   ```
+   - Must start with `postgresql://` or `postgres://`
+   - Must include `?sslmode=require` at the end
+   - No extra spaces or line breaks
+
+4. **Verify environment is set correctly**:
+   - Each variable should be available for **Production**, **Preview**, and **Development**
+   - Click the checkboxes for all three environments
+
+5. **After fixing environment variables**:
+   - Go to **Deployments** tab
+   - Click the **⋯** menu on the latest deployment
+   - Click **Redeploy**
+   - ✅ Check "Use existing Build Cache" is **UNCHECKED**
+
+### Check Vercel Deployment Logs
+
+1. Go to **Deployments** tab
+2. Click on the latest deployment
+3. Check the **Runtime Logs** tab for errors
+4. Look for database connection errors or missing environment variable warnings
+
+### Test Database Connection
+
+Verify your Neon database is accessible:
+1. Go to [neon.tech](https://neon.tech) dashboard
+2. Check if your project is active (not paused)
+3. Copy the connection string again and update in Vercel if needed
+
+
 - Check Vercel build logs for errors
 - Ensure all environment variables are set correctly
 - Verify `DATABASE_URL` is accessible from Vercel
