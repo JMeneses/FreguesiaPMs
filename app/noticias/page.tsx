@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { Calendar } from 'lucide-react'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
 export const revalidate = 60 // revalidate every minute
 
 export default async function NewsPage() {

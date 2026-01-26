@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation'
 import { Calendar, ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
+
 interface NewsDetailPageProps {
     params: Promise<{ id: string }>
 }

@@ -1,5 +1,8 @@
 import { prisma } from '@/lib/prisma'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboard() {
     const newsCount = await prisma.news.count()
     const documentsCount = await prisma.document.count()

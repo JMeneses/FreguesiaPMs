@@ -175,6 +175,29 @@ We'll use Neon's free PostgreSQL database for this deployment.
 - Check `next.config.ts` for image domain configuration
 - Verify file paths are correct (case-sensitive on Vercel)
 
+### Prerender Error: DATABASE_URL Not Available
+If you see an error like:
+```
+Error occurred prerendering page "/admin/noticias"
+Error: the URL must start with the protocol `postgresql://` or `postgres://`
+```
+
+**Cause**: Next.js tries to pre-render pages during build, but `DATABASE_URL` is not available at build time.
+
+**Solution**: All pages that query the database have been configured with `export const dynamic = 'force-dynamic'` to skip static generation and render at request time instead. This is already implemented in:
+- `/app/admin/dashboard/page.tsx`
+- `/app/admin/noticias/page.tsx`
+- `/app/admin/noticias/[id]/edit/page.tsx`
+- `/app/admin/documentos/page.tsx`
+- `/app/noticias/page.tsx`
+- `/app/noticias/[id]/page.tsx`
+
+If you add new pages that query the database, add this line after your imports:
+```typescript
+export const dynamic = 'force-dynamic'
+```
+
+
 ## Updating Your Deployment
 
 After making changes locally:

@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/Button'
 import { Plus, Edit, Trash2 } from 'lucide-react'
 import { deleteNews } from '@/app/actions/news'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
+
 export default async function NewsListPage() {
     const news = await prisma.news.findMany({
         orderBy: { createdAt: 'desc' }

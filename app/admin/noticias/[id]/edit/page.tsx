@@ -3,6 +3,9 @@ import NewsForm from '@/components/admin/NewsForm'
 import { updateNews } from '@/app/actions/news'
 import { notFound } from 'next/navigation'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
+
 interface EditNewsPageProps {
     params: Promise<{ id: string }>
 }

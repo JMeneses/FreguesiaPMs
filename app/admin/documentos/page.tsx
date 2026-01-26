@@ -5,6 +5,9 @@ import { Folder as FolderIcon, FileText, Trash2, FolderPlus, Upload, ChevronRigh
 import DocumentUploadForm from '@/components/admin/DocumentUploadForm'
 import { createFolder, uploadDocument, deleteFolder, deleteDocument } from '@/app/actions/documents'
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = 'force-dynamic'
+
 interface DocumentsPageProps {
     searchParams: Promise<{ folderId?: string }>
 }
