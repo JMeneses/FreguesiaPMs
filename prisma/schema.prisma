@@ -1,0 +1,44 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+  name     String?
+}
+
+model News {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  imageUrl  String?
+  slug      String?   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Document {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  folderId  String?
+  folder    Folder?  @relation(fields: [folderId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Folder {
+  id        String     @id @default(cuid())
+  name      String
+  parentId  String?
+  parent    Folder?    @relation("FolderHierarchy", fields: [parentId], references: [id])
+  children  Folder[]   @relation("FolderHierarchy")
+  documents Document[]
+  createdAt DateTime   @default(now())
+}
