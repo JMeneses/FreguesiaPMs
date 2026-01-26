@@ -4,10 +4,15 @@ import { Calendar } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 
 export default async function RecentNews() {
-    const recentNews = await prisma.news.findMany({
-        take: 3,
-        orderBy: { createdAt: 'desc' }
-    })
+    let recentNews: any[] = []
+    try {
+        recentNews = await prisma.news.findMany({
+            take: 3,
+            orderBy: { createdAt: 'desc' }
+        })
+    } catch (error) {
+        console.error("Failed to fetch recent news:", error)
+    }
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
