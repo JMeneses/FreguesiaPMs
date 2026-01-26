@@ -185,6 +185,7 @@ Error: the URL must start with the protocol `postgresql://` or `postgres://`
 **Cause**: Next.js tries to pre-render pages during build, but `DATABASE_URL` is not available at build time.
 
 **Solution**: All pages that query the database have been configured with `export const dynamic = 'force-dynamic'` to skip static generation and render at request time instead. This is already implemented in:
+- `/app/page.tsx` (homepage - uses RecentNews component)
 - `/app/admin/dashboard/page.tsx`
 - `/app/admin/noticias/page.tsx`
 - `/app/admin/noticias/[id]/edit/page.tsx`
