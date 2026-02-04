@@ -7,6 +7,12 @@ This guide will walk you through deploying your Freguesia2026 application to Ver
 - GitHub account
 - Vercel account (sign up at [vercel.com](https://vercel.com))
 - Git installed on your computer
+- (Optional) Replit account for alternative hosting
+
+## Deployment Options
+
+1. **[Vercel (Recommended)](#vercel-deployment)** - Best performance and seamless Next.js integration.
+2. **[Replit](#replit-deployment)** - Good for quick testing and collaborative editing. See [REPLIT.md](./REPLIT.md) for detailed instructions.
 
 ## Step 1: Set Up PostgreSQL Database (Neon)
 
@@ -240,6 +246,15 @@ If you add new pages that query the database, add this line after your imports:
 ```typescript
 export const dynamic = 'force-dynamic'
 ```
+
+## Replit Deployment
+
+For specific instructions on deploying to Replit, please refer to the dedicated [REPLIT.md](./REPLIT.md) guide.
+
+Key points for Replit:
+- Set environment variables in the **Secrets** tool.
+- Run `npx prisma migrate deploy` and `npx prisma db seed` in the shell.
+- Ensure `NEXTAUTH_URL` is set to your public Repl URL.
 
 
 ## Updating Your Deployment

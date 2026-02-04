@@ -12,28 +12,39 @@ const handler = NextAuth({
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
+                console.log('Login attempt for email:', credentials?.email)
+
                 if (!credentials?.email || !credentials?.password) {
+                    console.warn('Missing email or password in credentials')
                     return null
                 }
 
-                const user = await prisma.user.findUnique({
-                    where: { email: credentials.email }
-                })
+                try {
+                    const user = await prisma.user.findUnique({
+                        where: { email: credentials.email }
+                    })
 
-                if (!user) {
+                    if (!user) {
+                        console.warn('Authentication failed: User not found', credentials.email)
+                        return null
+                    }
+
+                    const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
+
+                    if (!isPasswordValid) {
+                        console.warn('Authentication failed: Invalid password for', credentials.email)
+                        return null
+                    }
+
+                    console.log('Authentication successful for:', credentials.email)
+                    return {
+                        id: user.id,
+                        email: user.email,
+                        name: user.name,
+                    }
+                } catch (error) {
+                    console.error('CRITICAL: Authentication error during database query:', error)
                     return null
-                }
-
-                const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
-
-                if (!isPasswordValid) {
-                    return null
-                }
-
-                return {
-                    id: user.id,
-                    email: user.email,
-                    name: user.name,
                 }
             }
         })
@@ -44,10 +55,11 @@ const handler = NextAuth({
     session: {
         strategy: "jwt",
     },
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         async session({ session, token }) {
             if (token && session.user) {
-                // session.user.id = token.sub as string // TypeScript might need extension
+                (session.user as any).id = token.sub
             }
             return session
         }
