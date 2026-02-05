@@ -3,10 +3,7 @@
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import { writeFile, mkdir } from "fs/promises"
-import { join } from "path"
-import { cwd } from "process"
-import { existsSync } from "fs"
+import { objectStorage } from "@/lib/object-storage"
 
 export async function createNews(formData: FormData) {
     const title = formData.get('title') as string
@@ -18,33 +15,18 @@ export async function createNews(formData: FormData) {
     const images: string[] = []
 
     if (imageFile && imageFile.size > 0) {
-        const bytes = await imageFile.arrayBuffer()
-        const buffer = Buffer.from(bytes)
         const filename = `news-${Date.now()}-${imageFile.name}`
-        const uploadDir = join(cwd(), 'public', 'uploads')
-
-        if (!existsSync(uploadDir)) {
-            await mkdir(uploadDir, { recursive: true });
-        }
-
-        await writeFile(join(uploadDir, filename), buffer)
-        imageUrl = `/uploads/${filename}`
+        await objectStorage.uploadFile(imageFile, filename)
+        imageUrl = `/api/uploads/${filename}`
     }
 
     // Handle gallery images
     if (galleryFiles && galleryFiles.length > 0) {
-        const uploadDir = join(cwd(), 'public', 'uploads')
-        if (!existsSync(uploadDir)) {
-            await mkdir(uploadDir, { recursive: true });
-        }
-
         for (const file of galleryFiles) {
             if (file.size > 0) {
-                const bytes = await file.arrayBuffer()
-                const buffer = Buffer.from(bytes)
                 const filename = `gallery-${Date.now()}-${Math.random().toString(36).substring(7)}-${file.name}`
-                await writeFile(join(uploadDir, filename), buffer)
-                images.push(`/uploads/${filename}`)
+                await objectStorage.uploadFile(file, filename)
+                images.push(`/api/uploads/${filename}`)
             }
         }
     }
@@ -83,53 +65,22 @@ export async function updateNews(id: string, formData: FormData) {
     const imageFile = formData.get('imageFile') as File | null
 
     const galleryFiles = formData.getAll('galleryFiles') as File[]
-    let images: string[] | undefined = undefined
 
     if (imageFile && imageFile.size > 0) {
-        const bytes = await imageFile.arrayBuffer()
-        const buffer = Buffer.from(bytes)
         const filename = `news-${Date.now()}-${imageFile.name}`
-        const uploadDir = join(cwd(), 'public', 'uploads')
-
-        if (!existsSync(uploadDir)) {
-            await mkdir(uploadDir, { recursive: true });
-        }
-
-        await writeFile(join(uploadDir, filename), buffer)
-        imageUrl = `/uploads/${filename}`
+        await objectStorage.uploadFile(imageFile, filename)
+        imageUrl = `/api/uploads/${filename}`
     }
-
-    // Handle gallery images - Append to existing or replace? 
-    // For now, let's assume if new files are uploaded, we append them. 
-    // Or maybe we should first fetch existing to append? 
-    // The simplified requirement implies "upload multiple files", usually implies adding.
-    // However, Prisma update without fetching first overwrites arrays if we just set it.
-    // Ideally we should probably keep existing images.
-    // Let's first upload new ones.
 
     const newImages: string[] = []
     if (galleryFiles && galleryFiles.length > 0) {
-        const uploadDir = join(cwd(), 'public', 'uploads')
-        if (!existsSync(uploadDir)) {
-            await mkdir(uploadDir, { recursive: true });
-        }
-
         for (const file of galleryFiles) {
             if (file.size > 0) {
-                const bytes = await file.arrayBuffer()
-                const buffer = Buffer.from(bytes)
                 const filename = `gallery-${Date.now()}-${Math.random().toString(36).substring(7)}-${file.name}`
-                await writeFile(join(uploadDir, filename), buffer)
-                newImages.push(`/uploads/${filename}`)
+                await objectStorage.uploadFile(file, filename)
+                newImages.push(`/api/uploads/${filename}`)
             }
         }
-    }
-
-    if (newImages.length > 0) {
-        // We want to push to the array. Prisma `push` operation on lists is what we want.
-        // But `update` data argument types are tricky with `push`.
-        // Let's use `push` if supported or fetch and update.
-        // Prisma supports `push` for scalar lists.
     }
 
     if (!title || !content) {

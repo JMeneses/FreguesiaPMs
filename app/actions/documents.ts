@@ -2,10 +2,7 @@
 
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
-import { writeFile, mkdir } from "fs/promises"
-import { join } from "path"
-import { cwd } from "process"
-import { existsSync } from "fs"
+import { objectStorage } from "@/lib/object-storage"
 
 export async function createFolder(formData: FormData) {
     const name = formData.get('name') as string
@@ -49,23 +46,11 @@ export async function uploadDocument(formData: FormData) {
 
     if (!file) return
 
-    const bytes = await file.arrayBuffer()
-    const buffer = Buffer.from(bytes)
-
     // Ensure unique name
     const filename = `${Date.now()}-${file.name}`
-    const path = join(cwd(), 'public', 'uploads', filename)
+    await objectStorage.uploadFile(file, filename)
 
-    // Ensure directory exists
-    const uploadDir = join(cwd(), 'public', 'uploads')
-
-    if (!existsSync(uploadDir)) {
-        await mkdir(uploadDir, { recursive: true });
-    }
-
-    await writeFile(path, buffer)
-
-    const url = `/uploads/${filename}`
+    const url = `/api/uploads/${filename}`
 
     await prisma.document.create({
         data: {
