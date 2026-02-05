@@ -36,8 +36,8 @@ export default function AdminLayout({
                                 key={item.href}
                                 href={item.href}
                                 className={`flex items-center gap-3 px-4 py-2 rounded-md transition-colors ${isActive
-                                        ? 'bg-primary/10 text-primary font-medium'
-                                        : 'text-gray-600 hover:bg-gray-50'
+                                    ? 'bg-primary/10 text-primary font-medium'
+                                    : 'text-gray-600 hover:bg-gray-50'
                                     }`}
                             >
                                 <item.icon size={20} />
@@ -54,6 +54,7 @@ export default function AdminLayout({
                     <button
                         onClick={() => signOut({ callbackUrl: '/admin/login' })}
                         className="w-full flex items-center gap-3 px-4 py-2 text-red-600 hover:bg-red-50 rounded-md transition-colors"
+                        aria-label="Terminar sessão"
                     >
                         <LogOut size={20} />
                         Sair

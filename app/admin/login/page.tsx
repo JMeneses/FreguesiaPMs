@@ -70,7 +70,7 @@ export default function LoginPage() {
                             required
                         />
                     </div>
-                    <Button type="submit" className="w-full justify-center">Entrar</Button>
+                    <Button type="submit" className="w-full justify-center" aria-label="Entrar na área de administração">Entrar</Button>
                 </form>
             </div>
         </div>

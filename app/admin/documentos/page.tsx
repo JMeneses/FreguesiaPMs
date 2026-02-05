@@ -89,7 +89,7 @@ export default async function DocumentsPage({ searchParams }: DocumentsPageProps
                                 <span className="font-medium text-gray-700 truncate flex-1">{folder.name}</span>
                             </Link>
                             <form action={deleteFolder.bind(null, folder.id)} className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button className="text-red-500 hover:text-red-700 p-1 bg-white rounded-full shadow-sm hover:shadow" title="Apagar">
+                                <button className="text-red-500 hover:text-red-700 p-1 bg-white rounded-full shadow-sm hover:shadow" title="Apagar" aria-label={`Apagar pasta: ${folder.name}`}>
                                     <Trash2 size={14} />
                                 </button>
                             </form>
@@ -104,7 +104,7 @@ export default async function DocumentsPage({ searchParams }: DocumentsPageProps
                                 <span className="font-medium text-gray-700 truncate flex-1">{doc.name}</span>
                             </a>
                             <form action={deleteDocument.bind(null, doc.id)} className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button className="text-red-500 hover:text-red-700 p-1 bg-white rounded-full shadow-sm hover:shadow" title="Apagar">
+                                <button className="text-red-500 hover:text-red-700 p-1 bg-white rounded-full shadow-sm hover:shadow" title="Apagar" aria-label={`Apagar documento: ${doc.name}`}>
                                     <Trash2 size={14} />
                                 </button>
                             </form>

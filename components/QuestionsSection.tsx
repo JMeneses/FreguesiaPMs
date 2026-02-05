@@ -56,6 +56,7 @@ export default function QuestionsSection() {
                                         onClick={() => setOpenIndex(index === openIndex ? null : index)}
                                         className="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors focus:outline-none"
                                         aria-expanded={index === openIndex}
+                                        aria-label={`Ver resposta para: ${faq.question}`}
                                     >
                                         <span className="text-lg font-semibold text-gray-800">{faq.question}</span>
                                         <span className="ml-4 text-primary flex-shrink-0">

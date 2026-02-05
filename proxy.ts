@@ -7,7 +7,7 @@ const auth = withAuth({
     },
 })
 
-export function proxy(req: NextRequest, event: any) {
+export default function middleware(req: NextRequest, event: any) {
     return (auth as any)(req, event)
 }
 

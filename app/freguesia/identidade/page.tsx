@@ -41,10 +41,10 @@ export default function IdentityPage() {
 
                             <h4 className="font-bold text-sm uppercase text-gray-500 mb-3">Downloads</h4>
                             <div className="flex flex-wrap gap-4">
-                                <button className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium">
+                                <button className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium" aria-label="Descarregar Brasão em formato PNG">
                                     <Download size={16} /> Brasão (PNG)
                                 </button>
-                                <button className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium">
+                                <button className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium" aria-label="Descarregar Brasão em formato Vetorial">
                                     <Download size={16} /> Brasão (Vectorial)
                                 </button>
                             </div>

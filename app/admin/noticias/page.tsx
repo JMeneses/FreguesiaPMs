@@ -45,11 +45,11 @@ export default async function NewsListPage() {
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <div className="flex justify-end gap-2">
-                                        <Link href={`/admin/noticias/${item.id}/edit`}>
+                                        <Link href={`/admin/noticias/${item.id}/edit`} aria-label={`Editar notícia: ${item.title}`}>
                                             <span className="text-indigo-600 hover:text-indigo-900 p-2 inline-block"><Edit size={18} /></span>
                                         </Link>
                                         <form action={deleteNews.bind(null, item.id)}>
-                                            <button className="text-red-600 hover:text-red-900 p-2"><Trash2 size={18} /></button>
+                                            <button className="text-red-600 hover:text-red-900 p-2" aria-label={`Apagar notícia: ${item.title}`}><Trash2 size={18} /></button>
                                         </form>
                                     </div>
                                 </td>

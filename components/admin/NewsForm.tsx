@@ -67,6 +67,7 @@ export default function NewsForm({ action, initialData }: NewsFormProps) {
                 <button
                     type="submit"
                     className="bg-primary text-white px-4 py-2 rounded hover:bg-[#3d7270] transition-colors"
+                    aria-label="Guardar notícia"
                 >
                     Guardar
                 </button>

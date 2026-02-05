@@ -24,7 +24,12 @@ export default function Navbar() {
                         <Link href="/" className="hover:text-gray-200 transition-colors">Início</Link>
 
                         <div className="relative group">
-                            <button className="flex items-center gap-1 hover:text-gray-200 transition-colors focus:outline-none">
+                            <button
+                                className="flex items-center gap-1 hover:text-gray-200 transition-colors focus:outline-none"
+                                aria-label="Menu Freguesia"
+                                aria-expanded={openDropdown === 'freguesia'}
+                                onClick={() => toggleDropdown('freguesia')}
+                            >
                                 Freguesia <ChevronDown size={16} />
                             </button>
                             <div className="absolute left-0 mt-0 w-48 bg-white text-gray-800 rounded-md shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left z-50">
@@ -62,6 +67,8 @@ export default function Navbar() {
                                 <button
                                     onClick={() => toggleDropdown('freguesia')}
                                     className="w-full text-left flex justify-between items-center py-2 hover:bg-[#3d7270] px-2 rounded transition-colors"
+                                    aria-label="Abrir menu Freguesia"
+                                    aria-expanded={openDropdown === 'freguesia'}
                                 >
                                     Freguesia <ChevronDown size={16} className={`transition-transform ${openDropdown === 'freguesia' ? 'rotate-180' : ''}`} />
                                 </button>

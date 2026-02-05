@@ -60,15 +60,23 @@ export default function Hero() {
                     <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">{slide.title}</h1>
                         <p className="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">{slide.description}</p>
-                        <Button size="lg" variant="primary">Saiba Mais</Button>
+                        <Button size="lg" variant="primary" aria-label={`Saiba mais sobre ${slide.title}`}>Saiba Mais</Button>
                     </div>
                 </div>
             ))}
 
-            <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-black/30 rounded-full hover:bg-black/50 text-white transition-colors">
+            <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-black/30 rounded-full hover:bg-black/50 text-white transition-colors"
+                aria-label="Slide anterior"
+            >
                 <ChevronLeft size={32} />
             </button>
-            <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-black/30 rounded-full hover:bg-black/50 text-white transition-colors">
+            <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-black/30 rounded-full hover:bg-black/50 text-white transition-colors"
+                aria-label="Próximo slide"
+            >
                 <ChevronRight size={32} />
             </button>
 
@@ -79,6 +87,8 @@ export default function Hero() {
                         onClick={() => setCurrentSlide(index)}
                         className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-primary' : 'bg-white/50 hover:bg-white'
                             }`}
+                        aria-label={`Ir para slide ${index + 1}`}
+                        aria-current={index === currentSlide ? 'true' : 'false'}
                     />
                 ))}
             </div>
