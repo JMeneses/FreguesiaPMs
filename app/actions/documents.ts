@@ -84,15 +84,15 @@ export async function getFolderAncestry(folderId: string): Promise<{ id: string;
     let currentId: string | null = folderId
 
     while (currentId) {
-        const folder = await prisma.folder.findUnique({
+        const folderNode: { id: string; name: string; parentId: string | null } | null = await prisma.folder.findUnique({
             where: { id: currentId },
             select: { id: true, name: true, parentId: true }
         })
 
-        if (!folder) break
+        if (!folderNode) break
 
-        ancestry.unshift({ id: folder.id, name: folder.name })
-        currentId = folder.parentId
+        ancestry.unshift({ id: folderNode.id, name: folderNode.name })
+        currentId = folderNode.parentId
     }
 
     return ancestry
