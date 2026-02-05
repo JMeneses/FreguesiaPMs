@@ -63,6 +63,26 @@ export default function NewsForm({ action, initialData }: NewsFormProps) {
                 />
             </div>
 
+            <div>
+                <label htmlFor="galleryFiles" className="block text-sm font-medium text-gray-700">Galeria de Imagens</label>
+                <div className="mt-1">
+                    <input
+                        type="file"
+                        name="galleryFiles"
+                        id="galleryFiles"
+                        accept="image/*"
+                        multiple
+                        className="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-md file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-primary file:text-white
+                        hover:file:bg-[#3d7270]"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Selecione múltiplas imagens para o carrossel.</p>
+                </div>
+            </div>
+
             <div className="flex justify-end">
                 <button
                     type="submit"

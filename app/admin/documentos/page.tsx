@@ -3,7 +3,9 @@ import { prisma } from '@/lib/prisma'
 import { Button } from '@/components/ui/Button'
 import { Folder as FolderIcon, FileText, Trash2, FolderPlus, Upload, ChevronRight, CornerLeftUp } from 'lucide-react'
 import DocumentUploadForm from '@/components/admin/DocumentUploadForm'
-import { createFolder, uploadDocument, deleteFolder, deleteDocument } from '@/app/actions/documents'
+import { createFolder, uploadDocument, deleteFolder, deleteDocument, getFolderAncestry } from '@/app/actions/documents'
+
+// ... existing imports ...
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = 'force-dynamic'
@@ -19,6 +21,8 @@ export default async function DocumentsPage({ searchParams }: DocumentsPageProps
         ? await prisma.folder.findUnique({ where: { id: folderId }, include: { parent: true } })
         : null
 
+    const ancestry = folderId ? await getFolderAncestry(folderId) : []
+
     const folders = await prisma.folder.findMany({
         where: { parentId: folderId || null },
         orderBy: { name: 'asc' }
@@ -33,23 +37,26 @@ export default async function DocumentsPage({ searchParams }: DocumentsPageProps
         <div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold flex items-center gap-2">
-                        <span className="text-gray-500">Documentos</span>
-                        {currentFolder && (
-                            <>
-                                <ChevronRight size={20} className="text-gray-400" />
-                                <span>{currentFolder.name}</span>
-                            </>
-                        )}
-                    </h1>
-                    {currentFolder && (
-                        <Link
-                            href={currentFolder.parentId ? `?folderId=${currentFolder.parentId}` : '/admin/documentos'}
-                            className="text-sm text-primary flex items-center gap-1 mt-1 hover:underline"
-                        >
-                            <CornerLeftUp size={14} /> Voltar atrás
+                    <nav className="flex items-center text-sm text-gray-500 mb-1">
+                        <Link href="/admin/documentos" className="hover:text-primary transition-colors">
+                            Documentos
                         </Link>
-                    )}
+                        {ancestry.map((folder) => (
+                            <span key={folder.id} className="flex items-center">
+                                <ChevronRight size={14} className="mx-1" />
+                                {folder.id === folderId ? (
+                                    <span className="font-semibold text-gray-900">{folder.name}</span>
+                                ) : (
+                                    <Link href={`?folderId=${folder.id}`} className="hover:text-primary transition-colors">
+                                        {folder.name}
+                                    </Link>
+                                )}
+                            </span>
+                        ))}
+                    </nav>
+                    <h1 className="text-2xl font-bold text-gray-900">
+                        {currentFolder ? currentFolder.name : 'Documentos'}
+                    </h1>
                 </div>
 
                 <div className="flex gap-2">

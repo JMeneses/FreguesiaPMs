@@ -78,3 +78,22 @@ export async function uploadDocument(formData: FormData) {
     revalidatePath('/admin/documentos')
     revalidatePath('/documentos')
 }
+
+export async function getFolderAncestry(folderId: string): Promise<{ id: string; name: string }[]> {
+    const ancestry: { id: string; name: string }[] = []
+    let currentId: string | null = folderId
+
+    while (currentId) {
+        const folder = await prisma.folder.findUnique({
+            where: { id: currentId },
+            select: { id: true, name: true, parentId: true }
+        })
+
+        if (!folder) break
+
+        ancestry.unshift({ id: folder.id, name: folder.name })
+        currentId = folder.parentId
+    }
+
+    return ancestry
+}

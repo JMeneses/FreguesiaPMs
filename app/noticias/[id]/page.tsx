@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 import { notFound } from 'next/navigation'
 import { Calendar, ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
+import NewsCarousel from '@/components/NewsCarousel'
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = 'force-dynamic'
@@ -51,12 +52,19 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
                     </div>
                 )}
 
-                <div className="prose prose-lg max-w-none text-gray-700">
+                <div className="prose prose-lg max-w-none text-gray-700 mb-12">
                     {/* Simple rendering of text with newlines. Ideally Markdown renderer. */}
                     {news.content.split('\n').map((paragraph: string, idx: number) => (
                         <p key={idx} className="mb-4">{paragraph}</p>
                     ))}
                 </div>
+
+                {news.images && news.images.length > 0 && (
+                    <div className="mb-12">
+                        <h2 className="text-2xl font-bold mb-6 text-gray-900">Galeria</h2>
+                        <NewsCarousel images={news.images} title={news.title} />
+                    </div>
+                )}
             </div>
         </article>
     )
