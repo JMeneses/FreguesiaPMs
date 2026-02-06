@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { Folder as FolderIcon, FileText, Search, ChevronRight, CornerLeftUp, Download } from 'lucide-react'
+import { getFolderAncestry } from '@/app/actions/documents'
 
 export const revalidate = 0 // Dynamic
 
@@ -14,6 +15,8 @@ export default async function PublicDocumentsPage({ searchParams }: PublicDocume
     const currentFolder = folderId && !q
         ? await prisma.folder.findUnique({ where: { id: folderId }, include: { parent: true } })
         : null
+
+    const ancestry = folderId && !q ? await getFolderAncestry(folderId) : []
 
     // Search Logic
     const whereFolder = q ? { name: { contains: q } } : { parentId: folderId || null }
@@ -65,12 +68,18 @@ export default async function PublicDocumentsPage({ searchParams }: PublicDocume
                             <Link href="/documentos" className={`hover:underline ${!currentFolder ? 'font-bold text-gray-900' : 'text-gray-500'}`}>
                                 Raiz
                             </Link>
-                            {currentFolder && (
-                                <>
+                            {ancestry.map((folder) => (
+                                <span key={folder.id} className="flex items-center gap-2">
                                     <ChevronRight size={16} className="text-gray-400" />
-                                    <span className="font-bold text-gray-900">{currentFolder.name}</span>
-                                </>
-                            )}
+                                    {folder.id === folderId ? (
+                                        <span className="font-bold text-gray-900">{folder.name}</span>
+                                    ) : (
+                                        <Link href={`?folderId=${folder.id}`} className="text-gray-500 hover:underline">
+                                            {folder.name}
+                                        </Link>
+                                    )}
+                                </span>
+                            ))}
                             {currentFolder && (
                                 <Link
                                     href={currentFolder.parentId ? `?folderId=${currentFolder.parentId}` : '/documentos'}

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { signOut } from 'next-auth/react'
-import { LayoutDashboard, FileText, FolderOpen, LogOut, Home } from 'lucide-react'
+import { LayoutDashboard, FileText, FolderOpen, LogOut, Home, Users } from 'lucide-react'
 
 export default function AdminLayout({
     children,
@@ -20,6 +20,7 @@ export default function AdminLayout({
         { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { href: '/admin/noticias', label: 'Notícias', icon: FileText },
         { href: '/admin/documentos', label: 'Documentos', icon: FolderOpen },
+        { href: '/admin/users', label: 'Utilizadores', icon: Users },
     ]
 
     return (

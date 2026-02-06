@@ -3,7 +3,7 @@ import { Mail, Phone } from 'lucide-react'
 
 const executiveMembers = [
     {
-        name: 'João Silva',
+        name: 'Manuel Barroso',
         role: 'Presidente',
         image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400',
         email: 'presidente@freguesia.pt'
