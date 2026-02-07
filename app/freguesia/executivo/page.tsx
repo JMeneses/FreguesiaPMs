@@ -3,30 +3,42 @@ import { Mail, Phone } from 'lucide-react'
 
 const executiveMembers = [
     {
-        name: 'Manuel Barroso',
+        name: 'Manuel de Freitas Barroso',
         role: 'Presidente',
         image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400',
         email: 'presidente@freguesia.pt'
     },
     {
-        name: 'Maria Santos',
+        name: 'Vânia Cristina Vala Marques',
         role: 'Secretária',
         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400',
         email: 'secretaria@freguesia.pt'
     },
     {
-        name: 'António Costa',
+        name: 'Tony Jorge Correia Trovão',
         role: 'Tesoureiro',
         image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
         email: 'tesouraria@freguesia.pt'
-    }
+    },
+    {
+        name: 'Cláudio Miguel Vala Cordeiro',
+        role: 'Vogal',
+        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
+        email: 'tesouraria@freguesia.pt'
+    },
+    {
+        name: 'Marta Ferreira da Silva',
+        role: 'Vogal',
+        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
+        email: 'tesouraria@freguesia.pt'
+    },
 ]
 
 export default function ExecutivePage() {
     return (
         <div className="min-h-screen bg-gray-50 py-12">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">Executivo da Junta</h1>
+                <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">Executivo</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {executiveMembers.map((member, idx) => (
