@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: Props) {
                                 </div>
                             </div>
 
-                            <a href="/#contatos" className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-[#3d7270] transition-colors flex items-center justify-center">
+                            <a href="/#contatos" className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-[#2f5856] transition-colors flex items-center justify-center">
                                 Contactar Secretaria
                             </a>
                         </div>

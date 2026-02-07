@@ -70,7 +70,7 @@ export default async function DocumentsPage({ searchParams }: DocumentsPageProps
                             className="px-3 py-2 border rounded-md text-sm w-40"
                             required
                         />
-                        <Button type="submit" size="sm" variant="secondary" className="whitespace-nowrap flex items-center gap-1">
+                        <Button type="submit" size="sm" variant="primary" className="whitespace-nowrap flex items-center gap-1">
                             <FolderPlus size={16} /> Criar
                         </Button>
                     </form>

@@ -16,7 +16,7 @@ export const Button = ({
     const baseStyles = 'font-semibold rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'
 
     const variants = {
-        primary: 'bg-primary text-white hover:bg-[#3d7270] focus:ring-primary',
+        primary: 'bg-primary text-white hover:bg-[#2f5856] focus:ring-primary',
         secondary: 'bg-secondary text-white hover:bg-opacity-90 focus:ring-secondary',
         outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary'
     }

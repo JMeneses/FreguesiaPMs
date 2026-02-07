@@ -16,7 +16,7 @@ export default function Footer() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold mb-4 text-primary">Freguesia</h3>
-                    <p className="text-gray-400">
+                    <p className="text-gray-300">
                         Servindo a comunidade com dedicação, transparência e proximidade.
                         Trabalhamos todos os dias para melhorar a qualidade de vida de todos os fregueses.
                     </p>
@@ -44,12 +44,12 @@ export default function Footer() {
                     <p className="text-white font-medium">09:00 - 12:30 | 14:00 - 17:00</p>
 
                     <div className="mt-6">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Redes Sociais</h4>
+                        <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Redes Sociais</h4>
                         <div className="flex gap-4">
-                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-primary transition-colors" aria-label="Facebook">
+                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#2f5856] transition-colors" aria-label="Facebook">
                                 <Facebook size={20} />
                             </a>
-                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-green-600 transition-colors" aria-label="WhatsApp">
+                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors" aria-label="WhatsApp">
                                 <MessageCircle size={20} />
                             </a>
                         </div>

@@ -3,13 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #478583;
+  --primary: #3d7270;
+  --primary-hover: #2f5856;
+  --primary-light: #478583;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -18,6 +22,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #5a9d9a;
+    --primary-hover: #6bb3b0;
   }
 }
 

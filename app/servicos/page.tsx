@@ -22,7 +22,7 @@ export default function ServicesPage() {
                             <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
                             <p className="text-gray-600 mb-4 font-medium flex-grow">{service.description}</p>
                             <p className="text-gray-500 text-sm leading-relaxed mb-6">{service.details}</p>
-                            <Link href={`/servicos/${service.slug}`} className="mt-auto inline-flex items-center text-primary font-semibold hover:text-[#3d7270] transition-colors group/link">
+                            <Link href={`/servicos/${service.slug}`} className="mt-auto inline-flex items-center text-primary font-semibold hover:text-[#2f5856] transition-colors group/link">
                                 Ver Mais
                                 <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                             </Link>
@@ -36,7 +36,7 @@ export default function ServicesPage() {
                     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                         Contacte a secretaria da Junta de Freguesia para obter mais informações sobre outros serviços administrativos ou apoios disponíveis.
                     </p>
-                    <a href="/#contatos" className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-[#3d7270] transition-colors inline-block">
+                    <a href="/#contatos" className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-[#2f5856] transition-colors inline-block">
                         Contactar Agora
                     </a>
                 </div>

@@ -21,11 +21,11 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-8 font-medium items-center">
-                        <Link href="/" className="hover:text-gray-200 transition-colors">Início</Link>
+                        <Link href="/" className="hover:text-white transition-colors">Início</Link>
 
                         <div className="relative group">
                             <button
-                                className="flex items-center gap-1 hover:text-gray-200 transition-colors focus:outline-none"
+                                className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none"
                                 aria-label="Menu Freguesia"
                                 aria-expanded={openDropdown === 'freguesia'}
                                 onClick={() => toggleDropdown('freguesia')}
@@ -40,9 +40,9 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        <Link href="/noticias" className="hover:text-gray-200 transition-colors">Notícias</Link>
-                        <Link href="/documentos" className="hover:text-gray-200 transition-colors">Documentos</Link>
-                        <Link href="/servicos" className="hover:text-gray-200 transition-colors">Medidas e Iniciativas</Link>
+                        <Link href="/noticias" className="hover:text-white transition-colors">Notícias</Link>
+                        <Link href="/documentos" className="hover:text-white transition-colors">Documentos</Link>
+                        <Link href="/servicos" className="hover:text-white transition-colors">Medidas e Iniciativas</Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -59,32 +59,32 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="md:hidden pb-4 border-t border-[#3d7270]">
+                    <div className="md:hidden pb-4 border-t border-[#2f5856]">
                         <div className="flex flex-col space-y-2 mt-2">
-                            <Link href="/" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Início</Link>
+                            <Link href="/" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Início</Link>
 
                             <div>
                                 <button
                                     onClick={() => toggleDropdown('freguesia')}
-                                    className="w-full text-left flex justify-between items-center py-2 hover:bg-[#3d7270] px-2 rounded transition-colors"
+                                    className="w-full text-left flex justify-between items-center py-2 hover:bg-[#2f5856] px-2 rounded transition-colors"
                                     aria-label="Abrir menu Freguesia"
                                     aria-expanded={openDropdown === 'freguesia'}
                                 >
                                     Freguesia <ChevronDown size={16} className={`transition-transform ${openDropdown === 'freguesia' ? 'rotate-180' : ''}`} />
                                 </button>
                                 {openDropdown === 'freguesia' && (
-                                    <div className="pl-4 space-y-1 bg-[#3d7270]/20 rounded pb-2">
-                                        <Link href="/freguesia/identidade" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Identidade</Link>
-                                        <Link href="/freguesia/executivo" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Executivo</Link>
-                                        <Link href="/freguesia/assembleia" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Assembleia</Link>
-                                        <Link href="/freguesia/estatisticas" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Estatísticas</Link>
+                                    <div className="pl-4 space-y-1 bg-[#2f5856]/20 rounded pb-2">
+                                        <Link href="/freguesia/identidade" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Identidade</Link>
+                                        <Link href="/freguesia/executivo" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Executivo</Link>
+                                        <Link href="/freguesia/assembleia" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Assembleia</Link>
+                                        <Link href="/freguesia/estatisticas" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Estatísticas</Link>
                                     </div>
                                 )}
                             </div>
 
-                            <Link href="/noticias" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Notícias</Link>
-                            <Link href="/documentos" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Documentos</Link>
-                            <Link href="/servicos" className="block py-2 hover:bg-[#3d7270] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Medidas e Iniciativas</Link>
+                            <Link href="/noticias" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Notícias</Link>
+                            <Link href="/documentos" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Documentos</Link>
+                            <Link href="/servicos" className="block py-2 hover:bg-[#2f5856] px-2 rounded transition-colors" onClick={() => setIsOpen(false)}>Medidas e Iniciativas</Link>
                         </div>
                     </div>
                 )}
