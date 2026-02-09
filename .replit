@@ -9,7 +9,6 @@ channel = "stable-25_05"
 [userenv]
 
 [userenv.shared]
-NEXTAUTH_URL = "https://63bb06e6-8921-4bf7-863c-8badc97e03ca-00-2n7bp2z6woada.janeway.replit.dev"
 NEXTAUTH_SECRET = "tqYn17bcTUJ83TJsi7iytM7dw5f46c8xw3PBb9hO3hw="
 
 [workflows]
