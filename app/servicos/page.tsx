@@ -15,13 +15,13 @@ export default function ServicesPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
-                        <div key={service.id} className="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col h-full">
-                            <div className="w-14 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div key={service.id} className="bg-[#F6EEEF] opacity-90 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col h-full">
+                            <div className="w-14 h-14 bg-gray-900 rounded-lg shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <service.icon size={32} className="text-primary" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                            <p className="text-gray-600 mb-4 font-medium flex-grow">{service.description}</p>
-                            <p className="text-gray-500 text-sm leading-relaxed mb-6">{service.details}</p>
+                            <h3 className="text-2xl font-bold text-[#723D3F] mb-3">{service.title}</h3>
+                            <p className="text-[#723D3F] mb-4 font-medium flex-grow">{service.description}</p>
+                            <p className="text-[#723D3F] text-sm leading-relaxed mb-6">{service.details}</p>
                             <Link href={`/servicos/${service.slug}`} className="mt-auto inline-flex items-center text-primary font-semibold hover:text-[#2f5856] transition-colors group/link">
                                 Ver Mais
                                 <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-1 transition-transform" />

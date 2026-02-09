@@ -47,11 +47,11 @@ export const services: Service[] = [
     },
     {
         id: 2,
-        slug: 'ambiente',
-        title: 'Ambiente',
+        slug: 'manutencao',
+        title: 'Limpeza e Manutenção',
         icon: Leaf,
-        description: 'Limpeza urbana, espaços verdes e recolha de resíduos.',
-        details: 'Manutenção diária dos espaços públicos e gestão de resíduos para uma freguesia mais limpa.',
+        description: 'Mantemos uma equipa de limpeza e manutenção que trabalha diariamente para garantir espaços públicos limpos e cuidados.',
+        details: 'Limpeza urbana, manutenção de vias secundárias e escoamento de águas pluviais.',
         longDescription: `
             <p class="mb-4">A preservação do ambiente e a limpeza dos espaços públicos são prioridades para a nossa Junta de Freguesia. Trabalhamos diariamente para garantir que as nossas ruas, praças e jardins se mantêm limpos e cuidados.</p>
             <p class="mb-4">As nossas iniciativas incluem:</p>
@@ -72,19 +72,30 @@ export const services: Service[] = [
     },
     {
         id: 3,
-        slug: 'urbanismo',
-        title: 'Urbanismo',
+        slug: 'secretaria',
+        title: 'Atendimento ao Cidadão',
         icon: Building2,
-        description: 'Licenciamentos, obras particulares e reabilitação urbana.',
-        details: 'Serviços de apoio ao licenciamento e fiscalização de obras particulares.',
+        description: 'Criámos um serviço de proximidade para o atendimento e apoio dos fregueses.',
+        details: 'Emissão de certidões e atestados, apoio social.',
         longDescription: `
-            <p class="mb-4">O serviço de Urbanismo tem como missão ordenar o território e garantir o cumprimento das normas de construção, promovendo um desenvolvimento harmonioso da freguesia.</p>
-            <p class="mb-4">Disponibilizamos:</p>
+            <p class="mb-4">A Junta de Freguesia disponibiliza um serviço de atendimento ao cidadão, com o objetivo de prestar apoio e informação aos fregueses em diversas matérias.</p>
+            <p class="mb-4">Disponibilizamos a emissão de:</p>
             <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Emissão de atestados e certidões para fins diversos.</li>
-                <li>Licenciamento de canídeos e gatídeos.</li>
-                <li>Apoio técnico a obras particulares de pequena dimensão.</li>
-                <li>Fiscalização de ocupação da via pública.</li>
+                <li> Declarações (Várias) </li>
+                <li> Atestados de Residência </li>
+                <li> Atestados de insuficiência económica </li>
+                <li> Certidões (Várias) </li>
+                <li> Provas de Vida </li>
+                <li> Confirmações de Agregado Familiar </li>
+                <li> Termos de Justificação Administrativa </li>
+                <li> Termo de Identidade </li>
+                <li> Atestados de eleitor </li>
+                <li> Recenseamento Eleitoral </li>
+                <li> Licenciamento de Canídeos e Gatídeos </li>
+                <li> Autenticação de Fotocópias </li>
+                <li> Certidão de Documentos </li>
+                <li> Gestão do Cemitério Paroquial </li>
+                <li> Serviço de Pagamentos (água, luz, telefone, impostos, entre outros) </li>
             </ul>
         `,
         images: [
@@ -97,11 +108,11 @@ export const services: Service[] = [
     },
     {
         id: 4,
-        slug: 'acao-social',
-        title: 'Ação Social',
+        slug: 'cultura',
+        title: 'Cultura',
         icon: Heart,
-        description: 'Apoio a idosos, famílias carenciadas e intervenção comunitária.',
-        details: 'Gabinete de apoio social para atendimento e acompanhamento de situações de vulnerabilidade.',
+        description: 'Apoio às associações culturais e recreativas da freguesia.',
+        details: 'Financiamento, apoio logístico e cedência de espaços para eventos culturais.',
         longDescription: `
             <p class="mb-4">A solidariedade é um valor central na nossa freguesia. O Gabinete de Ação Social existe para apoiar os cidadãos em situação de vulnerabilidade, garantindo que ninguém fica para trás.</p>
             <p class="mb-4">Áreas de atuação:</p>
@@ -121,11 +132,11 @@ export const services: Service[] = [
     },
     {
         id: 5,
-        slug: 'espacos-verdes',
-        title: 'Espaços Verdes',
+        slug: 'cemiterios',
+        title: 'Cemitérios',
         icon: Trees,
-        description: 'Manutenção de parques e jardins.',
-        details: 'Cuidado permanente com os pulmões verdes da nossa freguesia.',
+        description: 'Gestão dos cemitérios da freguesia.',
+        details: 'Cuidado permanente com os cemitérios da nossa freguesia.',
         longDescription: `
             <p class="mb-4">Os espaços verdes são essenciais para a qualidade de vida. Mantemos e qualificamos os nossos parques e jardins para que sejam locais de lazer e convívio para todas as idades.</p>
             <ul class="list-disc pl-5 mb-4 space-y-2">
@@ -141,11 +152,11 @@ export const services: Service[] = [
     },
     {
         id: 6,
-        slug: 'transporte-solidario',
-        title: 'Transporte Solidário',
+        slug: 'obras-publicas-e-patrimonio',
+        title: 'Obras Públicas e Património',
         icon: Truck,
-        description: 'Transporte para consultas e tratamentos médicos.',
-        details: 'Serviço gratuito de transporte para idosos com mobilidade reduzida.',
+        description: 'Obras públicas, recuperação e manutenção do património da freguesia.',
+        details: 'Edificados, parques, fontes, cruzeiros, passeios, etc.',
         longDescription: `
             <p class="mb-4">Para combater o isolamento e garantir o acesso à saúde, a Junta de Freguesia disponibiliza um serviço de transporte solidário destinado, prioritariamente, à população sénior ou com mobilidade reduzida.</p>
             <p class="mb-4">O serviço assegura o transporte para:</p>
