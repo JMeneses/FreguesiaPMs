@@ -1,20 +1,71 @@
 'use client'
 import { useState } from 'react'
-import { Plus, Minus, MessageCircle, AlertTriangle } from 'lucide-react'
+import { Plus, Minus, MessageCircle, AlertTriangle, ExternalLink } from 'lucide-react'
 import { Button } from './ui/Button'
 
 const faqs = [
     {
-        question: 'Como posso reportar um buraco na via pública ou luz fundida?',
-        answer: 'Pode reportar situações na via pública através do nosso formulário online na secção "A Minha Rua", enviando um email para geral@freguesia.pt ou ligando para os nossos serviços administrativos.'
+        question: 'Como posso reportar uma luz fundida na via pública?',
+        answer: (
+            <>
+                Para tal deve reportar a luz fundida na via pública através da plataforma especializada da {' '}
+                <a
+                    href="https://balcaodigital.e-redes.pt/anomalies/public-light/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline font-bold"
+                >
+                    E-Redes para estas anomalias.
+                    <ExternalLink size={14} />
+                </a>.
+            </>
+        )
     },
     {
-        question: 'Quais os documentos necessários para obter um atestado de residência?',
-        answer: 'Necessita de apresentar o Cartão de Cidadão e, caso não esteja recenseado na freguesia, duas testemunhas recenseadas que atestem a sua residência ou comprovativo fiscal de morada.'
+        question: 'Como posso reportar um buraco no pavimento de uma via pública?',
+        answer: 'Se a estrada for alcatroada, deve reportar essa situação directamente à Câmara Municipal de Porto de Mós através da plataforma online de ocorrências. Se a estrada for de terra, deve reportar essa situação directamente à Junta de Freguesia contactando a secretaria.'
     },
     {
-        question: 'Como funciona a recolha de monstros (lixo volumoso)?',
+        question: 'Quais os procedimentos para obter um atestado ou declaração?',
+        answer: 'Entre os serviços prestados pela Junta de Freguesia estão os atestados e declarações. Para tal deve dirigir-se à secretaria da junta com o seu Cartão de Cidadão, podendo, para maior rapidez, dar início a esse processo de forma digital enviando as informações necessárias pelos canais indicados.'
+    },
+    {
+        question: 'Como funciona a recolha de monstros (lixo volumoso) na Freguesia?',
         answer: 'A recolha de monstros é efetuada gratuitamente às terças-feiras. Deve fazer o agendamento prévio até ao dia anterior através do número de telefone da junta.'
+    },
+    {
+        question: 'Como faço para apresentar uma reclamação dos serviços públicos da Freguesia?',
+        answer: (
+            <>
+                Para este efeito pode fazer a abertura de uma reclamação na plataforma online do {' '}
+                <a
+                    href="https://www.livroreclamacoes.pt/Inicio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline font-bold"
+                >
+                    Livro de Reclamações
+                    <ExternalLink size={14} />
+                </a>.
+            </>
+        )
+    },
+    {
+        question: 'Como posso verificar a convocatória para o Dia da Defesa Nacional?',
+        answer: (
+            <>
+                Para verificar o seu nome na lista convocatória para o Dia da Defesa Nacional, aceda à plataforma online{' '}
+                <a
+                    href="https://ddn.dgrdn.gov.pt/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline font-bold"
+                >
+                    Dia da Defesa Nacional
+                    <ExternalLink size={14} />
+                </a>.
+            </>
+        )
     }
 ]
 
@@ -33,10 +84,19 @@ export default function QuestionsSection() {
                                 Precisa de ajuda?
                             </h3>
                             <p className="text-gray-600 mb-6">
-                                Não encontra a resposta que procura? Contacte-nos diretamente ou reporte um problema na via pública.
+                                Não encontra a resposta que procura? Contacte-nos diretamente.
                             </p>
                             <div className="flex flex-col gap-3">
-                                <Button className="w-full justify-center">Contactar Secretaria</Button>
+                                <a
+                                    href="https://wa.me/+351926404160"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full justify-center flex items-center gap-2 bg-primary text-white font-semibold rounded-md px-4 py-2 hover:bg-[#2f5856] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                                    aria-label="Conversar pelo WhatsApp com a Secretaria"
+                                >
+                                    <MessageCircle size={20} />
+                                    Contactar Secretaria
+                                </a>
                                 <Button variant="outline" className="w-full justify-center flex items-center gap-2">
                                     <AlertTriangle size={18} />
                                     Reportar Ocorrência

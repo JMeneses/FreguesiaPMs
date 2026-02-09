@@ -50,7 +50,7 @@ export default function Footer() {
                     <div className="mt-6">
                         <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">WhatsApp</h4>
                         <div className="flex gap-4">
-                            <a href=" https://wa.me/+351926404160" className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors" aria-label="Coversar pelo WhatsApp">
+                            <a href="https://wa.me/+351926404160" className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors" aria-label="Coversar pelo WhatsApp">
                                 <MessageCircle size={20} />
                             </a>
                         </div>

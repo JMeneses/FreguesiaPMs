@@ -1,37 +1,37 @@
 import Link from 'next/link'
-import { ArrowRight, Leaf, GraduationCap, Building2, Heart } from 'lucide-react'
+import { ArrowRight, Dumbbell, GraduationCap, Baby, Drama } from 'lucide-react'
 
 const initiatives = [
     {
         id: 1,
-        title: 'Apoio à Educação',
-        description: 'Bolsas de estudo e material escolar para famílias carenciadas.',
-        icon: GraduationCap,
-        color: 'bg-blue-600',
+        title: 'Ginástica Sénior',
+        description: 'Programa de ginástica para seniores da freguesia (com mais de 65 anos).',
+        icon: Dumbbell,
+        color: 'bg-[#723D3F]',
         link: '/servicos'
     },
     {
         id: 2,
-        title: 'Fundo Ambiental',
-        description: 'Apoios para a melhoria da eficiência energética das habitações.',
-        icon: Leaf,
-        color: 'bg-green-600',
+        title: 'Apoio à Natalidade',
+        description: 'Apoio dado aos pais com residência na freguesia, aquando do nascimento de um filho.',
+        icon: Baby,
+        color: 'bg-[#7D7F82]',
         link: '/servicos'
     },
     {
         id: 3,
-        title: 'Reabilitação Urbana',
-        description: 'Programas de financiamento para obras de conservação.',
-        icon: Building2,
-        color: 'bg-orange-600',
+        title: 'Apoio à Educação',
+        description: 'Programas de apoio a aulas de Inglês e de Judo para crianças da freguesia.',
+        icon: GraduationCap,
+        color: 'bg-[#723D3F]',
         link: '/servicos'
     },
     {
         id: 4,
-        title: 'Apoio Social',
-        description: 'Cabazes alimentares e acompanhamento a idosos isolados.',
-        icon: Heart,
-        color: 'bg-red-600',
+        title: 'Apoio às Tradições',
+        description: 'Apoio a eventos e tradições da freguesia como as marchas populares de S. Pedro.',
+        icon: Drama,
+        color: 'bg-[#7D7F82]',
         link: '/servicos'
     }
 ]
@@ -40,9 +40,9 @@ export default function InitiativesMosaic() {
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Iniciativas e Apoios</h2>
+                <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Medidas e Iniciativas</h2>
                 <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Conheça os programas que temos disponíveis para melhorar a vida da nossa comunidade.
+                    Conheça as medidas e iniciativas que temos disponíveis para melhorar a vida da nossa comunidade.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

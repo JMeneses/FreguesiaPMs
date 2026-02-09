@@ -7,9 +7,9 @@ export default function ServicesPage() {
         <div className="min-h-screen bg-white py-12">
             <div className="container mx-auto px-4">
                 <header className="text-center mb-16">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Serviços e Iniciativas</h1>
+                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Medidas e Iniciativas</h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Conheça o conjunto de serviços que a Junta de Freguesia coloca à disposição da comunidade.
+                        Conheça o conjunto de medidas e iniciativas que a Junta de Freguesia coloca à disposição da comunidade.
                     </p>
                 </header>
 
@@ -36,7 +36,7 @@ export default function ServicesPage() {
                     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                         Contacte a secretaria da Junta de Freguesia para obter mais informações sobre outros serviços administrativos ou apoios disponíveis.
                     </p>
-                    <a href="/#contatos" className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-[#2f5856] transition-colors inline-block">
+                    <a href="https://wa.me/+351926404160" className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-[#2f5856] transition-colors inline-block">
                         Contactar Agora
                     </a>
                 </div>

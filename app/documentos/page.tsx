@@ -40,7 +40,7 @@ export default async function PublicDocumentsPage({ searchParams }: PublicDocume
     return (
         <div className="bg-gray-50 min-h-screen py-12">
             <div className="container mx-auto px-4">
-                <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Documentos e Atas</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Documentos</h1>
 
                 {/* Search Bar */}
                 <div className="max-w-2xl mx-auto mb-10">
