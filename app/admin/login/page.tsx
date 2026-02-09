@@ -1,35 +1,33 @@
 'use client'
 import { useState } from 'react'
-import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { Lock } from 'lucide-react'
+import { loginAction } from '@/app/actions/auth'
 
 export default function LoginPage() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-    const router = useRouter()
+    const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setError('')
+        setLoading(true)
 
         try {
-            const result = await signIn('credentials', {
-                redirect: false,
-                email,
-                password,
-            })
+            const formData = new FormData(e.currentTarget)
+            const result = await loginAction(formData)
 
             if (result?.error) {
-                setError('Credenciais inválidas')
-            } else {
-                router.push('/admin/dashboard')
-                router.refresh()
+                setError(result.error)
             }
-        } catch (err) {
+        } catch (err: any) {
+            if (err?.digest?.includes('NEXT_REDIRECT')) {
+                return
+            }
             setError('Ocorreu um erro ao tentar entrar')
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -54,8 +52,7 @@ export default function LoginPage() {
                         <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                         <input
                             type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            name="email"
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
                             required
                         />
@@ -64,13 +61,14 @@ export default function LoginPage() {
                         <label className="block text-sm font-medium text-gray-700 mb-1">Palavra-passe</label>
                         <input
                             type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
                             required
                         />
                     </div>
-                    <Button type="submit" className="w-full justify-center" aria-label="Entrar na área de administração">Entrar</Button>
+                    <Button type="submit" className="w-full justify-center" disabled={loading} aria-label="Entrar na área de administração">
+                        {loading ? 'A entrar...' : 'Entrar'}
+                    </Button>
                 </form>
             </div>
         </div>

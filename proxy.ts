@@ -1,15 +1,15 @@
-import { withAuth } from "next-auth/middleware"
-import { NextRequest } from "next/server"
+import { auth } from "@/lib/auth"
+import { NextRequest, NextResponse } from "next/server"
 
-const auth = withAuth({
-    pages: {
-        signIn: "/admin/login",
-    },
+export default auth((req) => {
+    const isLoginPage = req.nextUrl.pathname === '/admin/login'
+
+    if (!isLoginPage && !req.auth) {
+        return NextResponse.redirect(new URL('/admin/login', req.url))
+    }
+
+    return NextResponse.next()
 })
-
-export default function middleware(req: NextRequest, event: any) {
-    return (auth as any)(req, event)
-}
 
 export const config = {
     matcher: ["/admin/:path*"]
