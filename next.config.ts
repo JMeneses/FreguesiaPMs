@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: ['@google-cloud/storage', 'google-auth-library'],
   images: {
     remotePatterns: [
       {
