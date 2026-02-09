@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '20mb',
     },
   },
-  allowedDevOrigins: ['*'],
+  allowedDevOrigins: ['*.janeway.replit.dev', '*.replit.dev'],
   output: 'standalone',
 };
 
