@@ -1,44 +1,39 @@
-# Replit Deployment Guide - Freguesia2026
+# Freguesia Web - Replit Project
 
-Follow these steps to successfully deploy and run the application on Replit using your Neon PostgreSQL database.
+## Overview
+A Next.js 16 web application for "Freguesia de Porto de Mós" - a Portuguese local government (parish) website. Features news, documents, services, and an admin panel with authentication.
 
-## 1. Import to Replit
-- Create a new Repl by importing your GitHub repository.
+## Recent Changes
+- 2026-02-09: Initial Replit setup - configured database, environment, and deployment
 
-## 2. Set Up Environment Variables (Secrets)
-Replit uses "Secrets" to store sensitive environment variables. Open the **Secrets** tool (lock icon) in Replit and add the following:
+## Project Architecture
+- **Framework**: Next.js 16 with App Router (TypeScript)
+- **Styling**: Tailwind CSS v4
+- **Database**: PostgreSQL via Prisma ORM
+- **Authentication**: NextAuth.js v4
+- **Storage**: Replit Object Storage for file uploads
+- **UI**: Lucide React icons, Embla Carousel
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| `DATABASE_URL` | `postgresql://...` | Your Neon connection string (include `?sslmode=require`) |
-| `NEXTAUTH_SECRET` | `your-secret-key` | A random 32+ character string |
-| `NEXTAUTH_URL` | `https://your-repl-name.your-username.repl.co` | Your **public** Replit URL |
+## Key Files
+- `next.config.ts` - Next.js configuration (allows all dev origins for Replit proxy)
+- `prisma/schema.prisma` - Database schema (User, News, Document, Folder models)
+- `lib/prisma.ts` - Prisma client singleton
+- `app/api/auth/[...nextauth]/route.ts` - NextAuth API route
+- `app/api/uploads/[...path]/route.ts` - File upload API
 
-> [!IMPORTANT]
-> `NEXTAUTH_URL` must be the public URL where your app is accessible, not `localhost`.
+## Running
+- **Dev**: `npx next dev -H 0.0.0.0 -p 5000`
+- **Build**: `npm run build` (runs `prisma generate && next build`)
+- **Production**: `npx next start -H 0.0.0.0`
 
-## 3. Configure the Database
-In the Replit shell, run these commands to prepare the database:
+## Environment Variables
+- `DATABASE_URL` - PostgreSQL connection string (auto-set by Replit)
+- `NEXTAUTH_URL` - Public URL for authentication
+- `NEXTAUTH_SECRET` - Secret key for NextAuth session encryption
 
-```bash
-# Generate Prisma client
-npx prisma generate
+## Database
+Uses Replit's built-in PostgreSQL. Prisma migrations are in `prisma/migrations/`.
+To apply: `npx prisma migrate deploy`
 
-# Run migrations to Neon
-npx prisma migrate deploy
-
-# Seed the database (creates the admin user)
-npx prisma db seed
-```
-
-## 4. Run the Application
-Replit should automatically detect the `npm run dev` or `npm start` command. 
-
-- For **Development**: `npm run dev`
-- For **Production**: `npm run build && npm start`
-
-## 5. Troubleshooting Authentication
-If you cannot log in:
-1. **Check Logs**: Look at the Replit console output. I have added detailed logging that will show "Authentication failed: User not found" or "Invalid password".
-2. **Verify URL**: Ensure `NEXTAUTH_URL` in Secrets matches the address in your browser exactly (including `https://`).
-3. **Database Seed**: Ensure you ran `npx prisma db seed`. The default admin is `admin@freguesia.pt` with password `admin123`.
+## User Preferences
+- Portuguese language interface
