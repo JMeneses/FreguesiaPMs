@@ -104,7 +104,7 @@ export default async function ServicePage({ params }: Props) {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 font-medium">Telefone</p>
-                                        <p className="font-semibold text-gray-900">+351 212 345 678</p>
+                                        <p className="font-semibold text-gray-900">+351 244 400 540</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: Props) {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 font-medium">Email</p>
-                                        <p className="font-semibold text-gray-900">geral@jf-freguesia.pt</p>
+                                        <p className="font-semibold text-gray-900">geral@jf-portodemos.pt</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: Props) {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 font-medium">Morada</p>
-                                        <p className="font-semibold text-gray-900">Rua da Liberdade, nº 1</p>
+                                        <p className="font-semibold text-gray-900">Rua Dom Fuas Roupinho nº 11 <br /> 2480-335 Porto de Mós</p>
                                     </div>
                                 </div>
                             </div>

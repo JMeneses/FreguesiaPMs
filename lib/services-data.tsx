@@ -1,4 +1,4 @@
-import { GraduationCap, Leaf, Building2, Heart, HelpCircle, Truck, Trees, FileText } from 'lucide-react'
+import { GraduationCap, Leaf, Building2, Heart, HelpCircle, Truck, Trees, FileText, Baby, Dumbbell, Drama, Paintbrush, Headset, Skull, Castle } from 'lucide-react'
 
 export interface ServiceDocument {
     label: string;
@@ -20,7 +20,7 @@ export interface Service {
 export const services: Service[] = [
     {
         id: 1,
-        slug: 'educacao',
+        slug: 'apoio-a-educacao',
         title: 'Educação',
         icon: GraduationCap,
         description: 'Apoio escolar, bolsas de estudo e atividades extracurriculares.',
@@ -49,7 +49,7 @@ export const services: Service[] = [
         id: 2,
         slug: 'manutencao',
         title: 'Limpeza e Manutenção',
-        icon: Leaf,
+        icon: Paintbrush,
         description: 'Mantemos uma equipa de limpeza e manutenção que trabalha diariamente para garantir espaços públicos limpos e cuidados.',
         details: 'Limpeza urbana, manutenção de vias secundárias e escoamento de águas pluviais.',
         longDescription: `
@@ -74,7 +74,7 @@ export const services: Service[] = [
         id: 3,
         slug: 'secretaria',
         title: 'Atendimento ao Cidadão',
-        icon: Building2,
+        icon: Headset,
         description: 'Criámos um serviço de proximidade para o atendimento e apoio dos fregueses.',
         details: 'Emissão de certidões e atestados, apoio social.',
         longDescription: `
@@ -108,9 +108,9 @@ export const services: Service[] = [
     },
     {
         id: 4,
-        slug: 'cultura',
-        title: 'Cultura',
-        icon: Heart,
+        slug: 'apoio-as-tradicoes',
+        title: 'Apoio às Tradições',
+        icon: Drama,
         description: 'Apoio às associações culturais e recreativas da freguesia.',
         details: 'Financiamento, apoio logístico e cedência de espaços para eventos culturais.',
         longDescription: `
@@ -134,7 +134,7 @@ export const services: Service[] = [
         id: 5,
         slug: 'cemiterios',
         title: 'Cemitérios',
-        icon: Trees,
+        icon: Skull,
         description: 'Gestão dos cemitérios da freguesia.',
         details: 'Cuidado permanente com os cemitérios da nossa freguesia.',
         longDescription: `
@@ -154,7 +154,7 @@ export const services: Service[] = [
         id: 6,
         slug: 'obras-publicas-e-patrimonio',
         title: 'Obras Públicas e Património',
-        icon: Truck,
+        icon: Castle,
         description: 'Obras públicas, recuperação e manutenção do património da freguesia.',
         details: 'Edificados, parques, fontes, cruzeiros, passeios, etc.',
         longDescription: `
@@ -174,5 +174,49 @@ export const services: Service[] = [
             { label: "Ficha de Inscrição Transporte", url: "#" },
             { label: "Regulamento de Utilização", url: "#" }
         ]
-    }
+    },
+    {
+        id: 7,
+        slug: 'ginastica-senior',
+        title: 'Ginástica Sénior',
+        icon: Dumbbell,
+        description: 'Estímulo de práticas de envelhecimento ativo e saudável.',
+        details: 'Programa de ginástica gratuito para séniores da freguesia (+ de 65 anos).',
+        longDescription: `
+            <p class="mb-4">A Ginástica Sénior é uma atividade física adaptada às necessidades e capacidades dos séniores, com o objetivo de promover a saúde, o bem-estar e a socialização. A frequência nas aulas é gratuita para todos os residentes da freguesia com mais de 65 anos.</p>
+            <p class="mb-4">As aulas são lecionadas pela professoa Ana Maria (nome fictício), de segunda a sexta-feira, nas instalações das associações locais (ver calendário de aulas), e promovem:</p>
+            <ul class="list-disc pl-5 mb-4 space-y-2">
+                <li>Melhoria da mobilidade e equilíbrio.</li>
+                <li>Reforço muscular.</li>
+                <li>Convívio e bem-estar emocional.</li>
+            </ul>
+            <p>Inscrições abertas na secretaria da Junta de Freguesia.</p>
+        `,
+        images: [
+            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000"
+        ],
+        documents: [
+            { label: "Ficha de Inscrição na Ginástica Sénior", url: "#" },
+            { label: "Calendário de Aulas", url: "#" }
+        ]
+    },
+    {
+        id: 8,
+        slug: 'apoio-a-natalidade',
+        title: 'Apoio à Natalidade',
+        icon: Baby,
+        description: 'Apoio às famílias com crianças recém-nascidas.',
+        details: 'Vouchers para compras em lojas locais de 150€ para cada nascido na freguesia.',
+        longDescription: `
+            <p class="mb-4">Para ter direiro a este apoio basta comprovar que a criança nasceu na freguesia e que os pais residem na freguesia.</p>
+            <p class="mb-4">O valor dos vouchers, após aprovação do executivo, são entregues na secretaria da Junta de Freguesia contra apresentação das respetivas faturas dessas despesas.</p>
+        `,
+        images: [
+            "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000"
+        ],
+        documents: [
+            { label: "Regulamento do Apoio à Natalidade", url: "#" },
+            { label: "Formulário de Candidatura", url: "#" }
+        ]
+    },
 ]

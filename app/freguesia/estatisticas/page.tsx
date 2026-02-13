@@ -93,10 +93,6 @@ export default function StatisticsPage() {
                     <div className="prose prose-lg text-gray-600 max-w-none">
                         <p>
                             Os dados apresentados são baseados nos últimos censos e nos registos administrativos da Junta de Freguesia.
-                            A dinâmica da nossa freguesia reflete um crescimento sustentado e um tecido empresarial diversificado.
-                        </p>
-                        <p>
-                            Para informações mais detalhadas ou dados específicos, por favor consulte os documentos disponíveis na secção de <a href="/documentos" className="text-primary hover:underline">Documentos</a> ou contacte a secretaria.
                         </p>
                     </div>
                 </div>

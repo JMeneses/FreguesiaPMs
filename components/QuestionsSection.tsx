@@ -97,10 +97,6 @@ export default function QuestionsSection() {
                                     <MessageCircle size={20} />
                                     Contactar Secretaria
                                 </a>
-                                <Button variant="outline" className="w-full justify-center flex items-center gap-2">
-                                    <AlertTriangle size={18} />
-                                    Reportar Ocorrência
-                                </Button>
                             </div>
                         </div>
                     </div>
