@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
-import { Folder as FolderIcon, FileText, Search, ChevronRight, CornerLeftUp, Download } from 'lucide-react'
+import { Folder as FolderIcon, FileText, Search, ChevronRight, CornerLeftUp, Download, ExternalLink } from 'lucide-react'
 import { getFolderAncestry } from '@/app/actions/documents'
 
 export const revalidate = 0 // Dynamic
@@ -135,6 +135,26 @@ export default async function PublicDocumentsPage({ searchParams }: PublicDocume
                             </a>
                         ))}
                     </div>
+                </div>
+
+                {/* Archive Section */}
+                <div className="mt-12 bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative group hover:shadow-md transition-shadow">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+                    <div className="flex-1">
+                        <h2 className="text-xl font-bold text-gray-900 mb-2">Arquivo Histórico (Anterior a 2025)</h2>
+                        <p className="text-gray-600 leading-relaxed">
+                            Procura atas, editais ou outros documentos antigos? Aceda ao nosso arquivo digital alojado no Google Drive para consultar toda a documentação histórica da freguesia.
+                        </p>
+                    </div>
+                    <a 
+                        href="https://drive.google.com" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-[#2f5856] transition-all transform hover:-translate-y-1 shadow-lg shadow-teal-900/10 whitespace-nowrap"
+                    >
+                        Abrir Google Drive
+                        <ExternalLink size={20} />
+                    </a>
                 </div>
             </div>
         </div>

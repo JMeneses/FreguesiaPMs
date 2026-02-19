@@ -1,36 +1,36 @@
 import Image from 'next/image'
-import { Mail, Phone } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 const executiveMembers = [
     {
         name: 'Manuel de Freitas Barroso',
         role: 'Presidente',
-        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400',
+        image: '/uploads/manuel_barroso_presidente_executivo.jpg',
         email: 'presidente@freguesia.pt'
     },
     {
         name: 'Vânia Cristina Vala Marques',
         role: 'Secretária',
-        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400',
-        email: 'secretaria@freguesia.pt'
+        image: '/uploads/vania_marques_secretaria.jpg',
+        email: ''
     },
     {
         name: 'Tony Jorge Correia Trovão',
         role: 'Tesoureiro',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
-        email: 'tesouraria@freguesia.pt'
+        image: '/uploads/tony_trovao_tesoureiro.jpg',
+        email: ''
     },
     {
         name: 'Cláudio Miguel Vala Cordeiro',
         role: 'Vogal',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
-        email: 'tesouraria@freguesia.pt'
+        image: '/uploads/claudio_cordeiro_vogal.jpg',
+        email: ''
     },
     {
         name: 'Marta Ferreira da Silva',
         role: 'Vogal',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400',
-        email: 'tesouraria@freguesia.pt'
+        image: '/uploads/marta_silva_vogal.jpg',
+        email: ''
     },
 ]
 
