@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
     },
   },
   allowedDevOrigins: ['*.janeway.replit.dev', '*.replit.dev'],
-  output: 'standalone',
 };
 
 export default nextConfig;

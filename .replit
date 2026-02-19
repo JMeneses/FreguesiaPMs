@@ -45,5 +45,5 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["bash", "-c", "node .next/standalone/server.js"]
+run = ["bash", "-c", "next start -H 0.0.0.0 -p 5000"]
 build = ["bash", "-c", "prisma generate && npx tsx prisma/seed.ts && next build"]
