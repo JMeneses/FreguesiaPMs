@@ -54,11 +54,13 @@ export default function ExecutivePage() {
                             <div className="p-8 text-center">
                                 <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
                                 <p className="text-primary font-medium text-lg mb-6">{member.role}</p>
-                                <div className="flex justify-center gap-4">
-                                    <a href={`mailto:${member.email}`} className="text-gray-500 hover:text-primary transition-colors flex items-center gap-2">
-                                        <Mail size={18} /> <span className="text-sm">{member.email}</span>
-                                    </a>
-                                </div>
+                                {member.email && (
+                                    <div className="flex justify-center gap-4">
+                                        <a href={`mailto:${member.email}`} className="text-gray-500 hover:text-primary transition-colors flex items-center gap-2">
+                                            <Mail size={18} /> <span className="text-sm">{member.email}</span>
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}

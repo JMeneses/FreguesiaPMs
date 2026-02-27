@@ -45,7 +45,7 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-bold mb-4">Horário de Atendimento</h3>
                     <p className="text-gray-300 mb-2">Segunda a Sexta</p>
-                    <p className="text-white font-medium">09:00 - 17:00 (contínuo)</p>
+                    <p className="text-white font-medium">09:00 - 17:30 (contínuo)</p>
 
                     <div className="mt-6">
                         <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">WhatsApp</h4>

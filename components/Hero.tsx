@@ -10,19 +10,19 @@ export default function Hero() {
     const slides = [
         {
             id: 1,
-            image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070', // Placeholder
+            image: '/uploads/arte_urbana_capa.jpg',
             title: 'Bem-vindo à Freguesia',
-            description: 'Trabalhando por um futuro melhor para a nossa comunidade.'
+            description: 'Trabalhamos por um futuro melhor para a nossa comunidade.'
         },
         {
             id: 2,
-            image: 'https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?q=80&w=2070', // Placeholder
+            image: '/uploads/santo_antonio_capa.jpg', // Placeholder
             title: 'Inovação e Tradição',
             description: 'Respeitando o passado enquanto construímos o futuro.'
         },
         {
             id: 3,
-            image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070', // Placeholder
+            image: '/uploads/castelo_baloico_capa.jpg', // Placeholder
             title: 'Juntos pela Comunidade',
             description: 'Participe nos eventos e iniciativas locais.'
         }
@@ -60,7 +60,6 @@ export default function Hero() {
                     <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">{slide.title}</h1>
                         <p className="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">{slide.description}</p>
-                        <Button size="lg" variant="primary" aria-label={`Saiba mais sobre ${slide.title}`}>Saiba Mais</Button>
                     </div>
                 </div>
             ))}

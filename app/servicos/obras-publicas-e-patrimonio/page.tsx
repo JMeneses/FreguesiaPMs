@@ -7,14 +7,38 @@ import { ArrowLeft, Castle, MapPin, Info } from 'lucide-react'
 const galleryItems = [
     {
         id: 1,
-        title: 'Castelo de Porto de Mós',
-        location: 'Porto de Mós',
-        intervention: 'Trabalhos de conservação e restauro das muralhas e torreões, garantindo a preservação estrutural e histórica deste monumento nacional.',
-        image: 'https://images.unsplash.com/photo-1590059235ef9-299f05562164?q=80&w=1200', // Placeholder
-        type: 'Património Histórico'
+        title: 'Restauro da fonte Mãe D\'Água',
+        location: 'Figueiredo',
+        intervention: 'Trabalhos de conservação e restauro.',
+        image: '/uploads/fonte1.jpg', // Placeholder
+        type: 'Património Local'
     },
     {
         id: 2,
+        title: 'Restauro da fonte Quinta do André Macho',
+        location: 'Tojal',
+        intervention: 'Trabalhos de conservação e restauro.',
+        image: '/uploads/fonte2.jpg', // Placeholder
+        type: 'Património Local'
+    },
+    {
+        id: 3,
+        title: 'Restauro da fonte do Castenheiro',
+        location: 'Castanheiro',
+        intervention: 'Trabalhos de conservação e restauro.',
+        image: '/uploads/fonte3.jpg', // Placeholder
+        type: 'Património Local'
+    },
+    {
+        id: 4,
+        title: 'Restauro da fonte do Rio Alcaide',
+        location: 'Rio Alcaide',
+        intervention: 'Trabalhos de conservação e restauro.',
+        image: '/uploads/fonte4.jpg', // Placeholder
+        type: 'Património Local'
+    },
+    {
+        id: 5,
         title: 'Mercado Municipal',
         location: 'Centro da Vila',
         intervention: 'Remodelação integral do espaço interior e cobertura, modernizando as bancas de venda e melhorando as condições de higiene e conforto para comerciantes e utentes.',
@@ -22,7 +46,7 @@ const galleryItems = [
         type: 'Equipamento Público'
     },
     {
-        id: 3,
+        id: 6,
         title: 'Corredor Verde',
         location: 'Margens do Rio Lena',
         intervention: 'Criação de percursos pedonais e cicláveis, reflorestação com espécies autóctones e instalação de áreas de lazer e observação da natureza.',
@@ -30,7 +54,7 @@ const galleryItems = [
         type: 'Espaço Lúdico'
     },
     {
-        id: 4,
+        id: 7,
         title: 'Largo do Rossio',
         location: 'Alqueidão da Serra',
         intervention: 'Requalificação urbanística com nova pavimentação em calçada portuguesa, reorganização do estacionamento e instalação de novo mobiliário urbano.',
@@ -38,7 +62,7 @@ const galleryItems = [
         type: 'Urbanismo'
     },
     {
-        id: 5,
+        id: 8,
         title: 'Igreja de São Pedro',
         location: 'Porto de Mós',
         intervention: 'Recuperação da fachada principal e limpeza de cantarias, preservando os elementos arquitetónicos originais do período barroco.',
@@ -46,7 +70,7 @@ const galleryItems = [
         type: 'Património Religioso'
     },
     {
-        id: 6,
+        id: 9,
         title: 'Parque Infantil Municipal',
         location: 'Porto de Mós',
         intervention: 'Substituição total dos equipamentos de diversão por modelos mais seguros e inclusivos, e aplicação de novo pavimento amortecedor.',

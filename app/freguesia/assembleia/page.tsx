@@ -25,7 +25,7 @@ export default function AssemblyPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {assemblyMembers.map((member, idx) => (
                         <div key={idx} className="bg-gray-50 p-6 rounded-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                            <div className="w-24 h-24 bg-gray-200 rounded-full mb-4 overflow-hidden relative">
+                            <div className="w-40 h-40 bg-gray-200 rounded-full mb-4 overflow-hidden relative">
                                 <Image
                                     src={member.image}
                                     alt={member.name}
