@@ -4,7 +4,7 @@ const stats = [
     {
         id: 1,
         label: 'População',
-        value: '5,432',
+        value: '6.005',
         icon: Users,
         color: 'text-blue-600',
         bg: 'bg-blue-100'
@@ -12,7 +12,7 @@ const stats = [
     {
         id: 2,
         label: 'Eleitores',
-        value: '4,100',
+        value: '5.205',
         icon: Vote,
         color: 'text-green-600',
         bg: 'bg-green-100'
@@ -20,7 +20,7 @@ const stats = [
     {
         id: 3,
         label: 'Mulheres',
-        value: '52%',
+        value: '49%',
         icon: Baby,
         color: 'text-pink-500',
         bg: 'bg-pink-100'
@@ -28,39 +28,31 @@ const stats = [
     {
         id: 4,
         label: 'Homens',
-        value: '48%',
+        value: '51%',
         icon: Users,
         color: 'text-blue-500',
         bg: 'bg-blue-50'
     },
     {
         id: 5,
-        label: 'Indústrias',
-        value: '24',
-        icon: Briefcase,
-        color: 'text-amber-600',
-        bg: 'bg-amber-100'
-    },
-    {
-        id: 6,
         label: 'Restauração',
-        value: '15',
+        value: '30',
         icon: Utensils,
         color: 'text-red-500',
         bg: 'bg-red-100'
     },
     {
-        id: 7,
+        id: 6,
         label: 'Escolas',
-        value: '3',
+        value: '5',
         icon: School,
         color: 'text-indigo-600',
         bg: 'bg-indigo-100'
     },
     {
-        id: 8,
+        id: 7,
         label: 'Associações',
-        value: '12',
+        value: '17',
         icon: Building,
         color: 'text-emerald-600',
         bg: 'bg-emerald-100'
@@ -92,7 +84,7 @@ export default function StatisticsPage() {
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Informação Adicional</h2>
                     <div className="prose prose-lg text-gray-600 max-w-none">
                         <p>
-                            Os dados apresentados são baseados nos últimos censos e nos registos administrativos da Junta de Freguesia.
+                            Os dados apresentados são baseados nos últimos censos (2021) e nos registos administrativos da Junta de Freguesia.
                         </p>
                     </div>
                 </div>

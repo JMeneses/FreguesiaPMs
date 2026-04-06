@@ -11,7 +11,8 @@ const galleryItems = [
         location: 'Figueiredo',
         intervention: 'Trabalhos de conservação e restauro.',
         image: '/uploads/fonte1.jpg', // Placeholder
-        type: 'Património Local'
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+M%C3%A3e+D%27%C3%81gua+Figueiredo+Porto+de+M%C3%B3s'
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ const galleryItems = [
         location: 'Tojal',
         intervention: 'Trabalhos de conservação e restauro.',
         image: '/uploads/fonte2.jpg', // Placeholder
-        type: 'Património Local'
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+Quinta+do+Andr%C3%A9+Macho+Tojal+Porto+de+M%C3%B3s'
     },
     {
         id: 3,
@@ -27,15 +29,17 @@ const galleryItems = [
         location: 'Castanheiro',
         intervention: 'Trabalhos de conservação e restauro.',
         image: '/uploads/fonte3.jpg', // Placeholder
-        type: 'Património Local'
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+do+Castanheiro+Castanheiro+Porto+de+M%C3%B3s'
     },
     {
         id: 4,
         title: 'Restauro da fonte do Rio Alcaide',
         location: 'Rio Alcaide',
         intervention: 'Trabalhos de conservação e restauro.',
-        image: '/uploads/fonte4.jpg', // Placeholder
-        type: 'Património Local'
+        image: '/uploads/fonte4.jpeg',
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+do+Rio+Alcaide+Rio+Alcaide+Porto+de+M%C3%B3s'
     },
     {
         id: 5,
@@ -43,39 +47,26 @@ const galleryItems = [
         location: 'Centro da Vila',
         intervention: 'Remodelação integral do espaço interior e cobertura, modernizando as bancas de venda e melhorando as condições de higiene e conforto para comerciantes e utentes.',
         image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?q=80&w=1200', // Placeholder
-        type: 'Equipamento Público'
+        type: 'Equipamento Público',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Mercado+Municipal+Porto+de+M%C3%B3s'
     },
     {
         id: 6,
-        title: 'Corredor Verde',
-        location: 'Margens do Rio Lena',
-        intervention: 'Criação de percursos pedonais e cicláveis, reflorestação com espécies autóctones e instalação de áreas de lazer e observação da natureza.',
-        image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200', // Placeholder
-        type: 'Espaço Lúdico'
-    },
-    {
-        id: 7,
         title: 'Largo do Rossio',
         location: 'Alqueidão da Serra',
         intervention: 'Requalificação urbanística com nova pavimentação em calçada portuguesa, reorganização do estacionamento e instalação de novo mobiliário urbano.',
         image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1200', // Placeholder
-        type: 'Urbanismo'
+        type: 'Urbanismo',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Largo+do+Rossio+Alqueid%C3%A3o+da+Serra+Porto+de+M%C3%B3s'
     },
     {
-        id: 8,
+        id: 7,
         title: 'Igreja de São Pedro',
         location: 'Porto de Mós',
         intervention: 'Recuperação da fachada principal e limpeza de cantarias, preservando os elementos arquitetónicos originais do período barroco.',
         image: 'https://images.unsplash.com/photo-1548690312-e3b507d17a12?q=80&w=1200', // Placeholder
-        type: 'Património Religioso'
-    },
-    {
-        id: 9,
-        title: 'Parque Infantil Municipal',
-        location: 'Porto de Mós',
-        intervention: 'Substituição total dos equipamentos de diversão por modelos mais seguros e inclusivos, e aplicação de novo pavimento amortecedor.',
-        image: 'https://images.unsplash.com/photo-1566438480900-0609be27a4be?q=80&w=1200', // Placeholder
-        type: 'Espaço Lúdico'
+        type: 'Património Religioso',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Igreja+de+S%C3%A3o+Pedro+Porto+de+M%C3%B3s'
     }
 ]
 
@@ -150,10 +141,15 @@ export default function ObrasPublicasPage() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center text-primary font-bold text-sm tracking-wide uppercase transition-all">
+                                    <a 
+                                        href={item.mapsUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-primary font-bold text-sm tracking-wide uppercase hover:text-[#2f5856] transition-all group/link"
+                                    >
                                         Ver localização
-                                        <MapPin size={16} className="ml-2" />
-                                    </div>
+                                        <MapPin size={16} className="ml-2 transform group-hover/link:scale-110 transition-transform" />
+                                    </a>
                                 </div>
                             </div>
                         ))}

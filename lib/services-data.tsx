@@ -184,19 +184,19 @@ export const services: Service[] = [
         details: 'Programa de ginástica gratuito para séniores da freguesia (+ de 65 anos).',
         longDescription: `
             <p class="mb-4">A Ginástica Sénior é uma atividade física adaptada às necessidades e capacidades dos séniores, com o objetivo de promover a saúde, o bem-estar e a socialização. A frequência nas aulas é gratuita para todos os residentes da freguesia com mais de 65 anos.</p>
-            <p class="mb-4">As aulas são lecionadas pela professoa Ana Maria (nome fictício), de segunda a sexta-feira, nas instalações das associações locais (ver calendário de aulas), e promovem:</p>
+            <p class="mb-4">As aulas são lecionadas pela professora Maria João Santana, nas seguintes instalações (ver calendário de aulas), e promovem:</p>
             <ul class="list-disc pl-5 mb-4 space-y-2">
                 <li>Melhoria da mobilidade e equilíbrio.</li>
                 <li>Reforço muscular.</li>
                 <li>Convívio e bem-estar emocional.</li>
             </ul>
-            <p>Inscrições abertas na secretaria da Junta de Freguesia.</p>
+            <p>Inscrições na secretaria da Junta de Freguesia.</p>
         `,
         images: [
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000"
         ],
         documents: [
-            { label: "Ficha de Inscrição na Ginástica Sénior", url: "#" },
+            { label: "Ficha de Inscrição na Ginástica Sénior", url: "/uploads/ficha_inscricao_ginastica_senior_porto_de_mos.pdf" },
             { label: "Calendário de Aulas", url: "#" }
         ]
     },

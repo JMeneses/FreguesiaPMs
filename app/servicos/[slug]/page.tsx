@@ -20,7 +20,7 @@ export default async function ServicePage({ params }: Props) {
     return (
         <div className="min-h-screen bg-white pb-20">
             {/* Header */}
-            <div className="bg-gray-50 border-b border-gray-100">
+            <div className="bg-white border-b border-gray-100">
                 <div className="container mx-auto px-4 py-12">
                     <Link href="/servicos" className="inline-flex items-center text-gray-500 hover:text-primary mb-6 transition-colors">
                         <ArrowLeft size={20} className="mr-2" />
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: Props) {
 
                         {/* Documents */}
                         {service.documents.length > 0 && (
-                            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100">
                                 <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                                     <FileText className="mr-3 text-primary" />
                                     Documentação e Formulários
@@ -104,7 +104,7 @@ export default async function ServicePage({ params }: Props) {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 font-medium">Telefone</p>
-                                        <p className="font-semibold text-gray-900">+351 244 400 540</p>
+                                        <p className="font-semibold text-gray-900">+351 244 401 818</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -127,9 +127,9 @@ export default async function ServicePage({ params }: Props) {
                                 </div>
                             </div>
 
-                            <a href="/#contatos" className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-[#2f5856] transition-colors flex items-center justify-center">
+                            <Link href="/#contatos" className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-[#2f5856] transition-colors flex items-center justify-center">
                                 Contactar Secretaria
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
