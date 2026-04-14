@@ -50,7 +50,7 @@ export async function uploadDocument(formData: FormData) {
     const filename = `${Date.now()}-${file.name}`
     await objectStorage.uploadFile(file, filename)
 
-    const url = `/uploads/${filename}`
+    const url = `/api/uploads/${filename}`
 
     await prisma.document.create({
         data: {

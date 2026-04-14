@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 5000",
-    "build": "prisma generate && npx tsx prisma/seed.ts && next build",
+    "build": "prisma generate && prisma db push --accept-data-loss && npx tsx prisma/seed.ts && next build",
     "start": "next start",
     "lint": "eslint"
   },
