@@ -17,7 +17,7 @@ export async function createNews(formData: FormData) {
     if (imageFile && imageFile.size > 0) {
         const filename = `news-${Date.now()}-${imageFile.name}`
         await objectStorage.uploadFile(imageFile, filename)
-        imageUrl = `/api/uploads/${filename}`
+        imageUrl = `/uploads/${filename}`
     }
 
     // Handle gallery images
@@ -26,7 +26,7 @@ export async function createNews(formData: FormData) {
             if (file.size > 0) {
                 const filename = `gallery-${Date.now()}-${Math.random().toString(36).substring(7)}-${file.name}`
                 await objectStorage.uploadFile(file, filename)
-                images.push(`/api/uploads/${filename}`)
+                images.push(`/uploads/${filename}`)
             }
         }
     }
@@ -69,7 +69,7 @@ export async function updateNews(id: string, formData: FormData) {
     if (imageFile && imageFile.size > 0) {
         const filename = `news-${Date.now()}-${imageFile.name}`
         await objectStorage.uploadFile(imageFile, filename)
-        imageUrl = `/api/uploads/${filename}`
+        imageUrl = `/uploads/${filename}`
     }
 
     const newImages: string[] = []

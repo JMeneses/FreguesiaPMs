@@ -1,28 +1,24 @@
-import { Client } from '@replit/object-storage';
+import fs from 'fs/promises';
+import path from 'path';
 
-const client = new Client();
+const UPLOADS_DIR = path.join(process.cwd(), 'public', 'uploads');
+
+async function ensureDir() {
+    await fs.mkdir(UPLOADS_DIR, { recursive: true });
+}
 
 export const objectStorage = {
     async uploadFile(file: File, filename: string): Promise<string> {
+        await ensureDir();
         const arrayBuffer = await file.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
-
-        const result = await client.uploadFromBytes(`public/${filename}`, buffer);
-
-        if (!result.ok) {
-            throw new Error(`Failed to upload file: ${result.error.message}`);
-        }
-
+        await fs.writeFile(path.join(UPLOADS_DIR, filename), buffer);
         return filename;
     },
 
     async getFile(filename: string): Promise<Buffer | null> {
         try {
-            const result = await client.downloadAsBytes(`public/${filename}`);
-            if (!result.ok) {
-                return null;
-            }
-            return result.value[0];
+            return await fs.readFile(path.join(UPLOADS_DIR, filename));
         } catch {
             return null;
         }
@@ -30,8 +26,8 @@ export const objectStorage = {
 
     async deleteFile(filename: string): Promise<boolean> {
         try {
-            const result = await client.delete(`public/${filename}`);
-            return result.ok;
+            await fs.unlink(path.join(UPLOADS_DIR, filename));
+            return true;
         } catch {
             return false;
         }
@@ -39,9 +35,8 @@ export const objectStorage = {
 
     async exists(filename: string): Promise<boolean> {
         try {
-            const result = await client.exists(`public/${filename}`);
-            if (!result.ok) return false;
-            return result.value;
+            await fs.access(path.join(UPLOADS_DIR, filename));
+            return true;
         } catch {
             return false;
         }
