@@ -7,9 +7,7 @@ export const objectStorage = {
         const arrayBuffer = await file.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const result = await client.uploadFromBytes(`public/${filename}`, buffer, {
-            contentType: file.type || 'application/octet-stream',
-        });
+        const result = await client.uploadFromBytes(`public/${filename}`, buffer);
 
         if (!result.ok) {
             throw new Error(`Failed to upload file: ${result.error.message}`);
