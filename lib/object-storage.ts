@@ -22,7 +22,7 @@ export const objectStorage = {
             if (!result.ok) {
                 return null;
             }
-            return Buffer.from(result.value);
+            return Buffer.from(result.value as Uint8Array);
         } catch {
             return null;
         }
