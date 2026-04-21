@@ -34,6 +34,23 @@ const faqs = [
         answer: 'A recolha de monstros é efetuada gratuitamente às terças-feiras. Deve fazer o agendamento prévio até ao dia anterior através do número de telefone da junta.'
     },
     {
+        question: 'Para realizar uma queima ou queimada, como devo proceder?',
+        answer: (
+            <>
+                Para este efeito deve pedir uma autorização online no formulário online: {' '}
+                <a
+                    href="https://fogos.icnf.pt:8443/queimasqueimadas/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline font-bold"
+                >
+                    Serviço de Queimas e Queimadas do ICNF
+                    <ExternalLink size={14} />
+                </a>.
+            </>
+        )
+    },
+    {
         question: 'Como faço para apresentar uma reclamação dos serviços públicos da Freguesia?',
         answer: (
             <>
@@ -83,7 +100,7 @@ export default function QuestionsSection() {
                                 <MessageCircle className="text-primary" />
                                 Precisa de ajuda?
                             </h3>
-                            <p className="text-gray-600 mb-6">
+                            <p className="text-gray-700 mb-6">
                                 Não encontra a resposta que procura? Contacte-nos diretamente.
                             </p>
                             <div className="flex flex-col gap-3">
@@ -123,7 +140,7 @@ export default function QuestionsSection() {
                                         className={`overflow-hidden transition-all duration-300 ease-in-out ${index === openIndex ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                                             }`}
                                     >
-                                        <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/50">
+                                        <div className="p-6 pt-0 text-gray-800 leading-relaxed border-t border-gray-100 bg-gray-50/50">
                                             {faq.answer}
                                         </div>
                                     </div>

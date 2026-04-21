@@ -9,7 +9,7 @@ export default function ServicesPage() {
                 <header className="max-w-3xl mx-auto text-center mb-20">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Medidas e Iniciativas</h1>
                     <div className="h-2 w-24 bg-primary mx-auto mb-8 rounded-full"></div>
-                    <p className="text-xl text-gray-600 leading-relaxed">
+                    <p className="text-xl text-gray-700 leading-relaxed">
                         Conheça o conjunto de medidas e iniciativas que a Junta de Freguesia coloca à disposição para melhorar a qualidade de vida e o bem-estar da nossa comunidade.
                     </p>
                 </header>
@@ -32,7 +32,7 @@ export default function ServicesPage() {
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed">
+                                <p className="text-gray-700 mb-6 leading-relaxed">
                                     {service.description}
                                 </p>
                             </div>
@@ -55,7 +55,7 @@ export default function ServicesPage() {
                             <HelpCircle size={48} className="text-primary" />
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 mb-6">Precisa de outro serviço?</h2>
-                        <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
                             A nossa secretaria está disponível para o apoiar. Contacte-nos diretamente para obter informações sobre outros serviços administrativos ou apoios disponíveis.
                         </p>
                         <a

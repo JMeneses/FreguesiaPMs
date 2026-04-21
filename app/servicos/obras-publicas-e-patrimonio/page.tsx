@@ -135,7 +135,7 @@ export default function ObrasPublicasPage() {
                                     
                                     <div className="flex items-start gap-3 bg-gray-50 p-4 rounded-2xl mb-4 flex-grow">
                                         <Info size={18} className="text-primary shrink-0 mt-1" />
-                                        <div className="text-gray-600 text-sm leading-relaxed">
+                                        <div className="text-gray-700 text-sm leading-relaxed">
                                             <p className="font-semibold text-gray-900 mb-1">Intervenção:</p>
                                             {item.intervention}
                                         </div>
@@ -161,7 +161,7 @@ export default function ObrasPublicasPage() {
             <section className="bg-gray-50 py-20 border-t border-gray-100">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">Tem alguma sugestão?</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed text-lg">
+                    <p className="text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed text-lg">
                         A manutenção e melhoria dos nossos espaços públicos é um esforço contínuo. Se identificou algum local que necessite de intervenção, entre em contacto connosco.
                     </p>
                     <Link 

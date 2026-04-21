@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: Props) {
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">Sobre este Serviço</h2>
                             <div
-                                className="prose prose-lg prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-primary max-w-none"
+                                className="prose prose-lg prose-headings:text-gray-900 prose-p:text-gray-800 prose-a:text-primary max-w-none"
                                 dangerouslySetInnerHTML={{ __html: service.longDescription }}
                             />
                         </div>
@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: Props) {
                         {/* Contact Card */}
                         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 sticky top-8">
                             <h3 className="text-xl font-bold text-gray-900 mb-6">Precisa de Ajuda?</h3>
-                            <p className="text-gray-600 mb-8">
+                            <p className="text-gray-700 mb-8">
                                 Se tiver dúvidas sobre este serviço, entre em contacto com a Junta de Freguesia.
                             </p>
 
@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: Props) {
                                         <Phone size={20} className="text-primary" />
                                     </div>
                                     <div>
-                                        <p className="text-sm text-gray-500 font-medium">Telefone</p>
+                                        <p className="text-sm text-gray-600 font-medium">Telefone</p>
                                         <p className="font-semibold text-gray-900">+351 244 401 818</p>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ export default async function ServicePage({ params }: Props) {
                                         <Mail size={20} className="text-primary" />
                                     </div>
                                     <div>
-                                        <p className="text-sm text-gray-500 font-medium">Email</p>
+                                        <p className="text-sm text-gray-600 font-medium">Email</p>
                                         <p className="font-semibold text-gray-900">geral@jf-portodemos.pt</p>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ export default async function ServicePage({ params }: Props) {
                                         <MapPin size={20} className="text-primary" />
                                     </div>
                                     <div>
-                                        <p className="text-sm text-gray-500 font-medium">Morada</p>
+                                        <p className="text-sm text-gray-600 font-medium">Morada</p>
                                         <p className="font-semibold text-gray-900">Rua Dom Fuas Roupinho nº 11 <br /> 2480-335 Porto de Mós</p>
                                     </div>
                                 </div>
