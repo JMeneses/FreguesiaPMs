@@ -74,9 +74,15 @@ export default function IdentityPage() {
                                 >
                                     <Download size={16} /> Brasão (PNG)
                                 </a>
-                                <button className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium" aria-label="Descarregar Brasão em formato Vetorial">
+
+                                <a
+                                    href="/uploads/brazao_vetor_JAN_2017.svg"
+                                    download="brasao_junta_porto_de_mos.svg"
+                                    className="flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 hover:border-primary transition-colors text-sm font-medium"
+                                    aria-label="Descarregar Brasão em formato Vetorial"
+                                >
                                     <Download size={16} /> Brasão (Vectorial)
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

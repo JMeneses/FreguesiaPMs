@@ -10,7 +10,7 @@ const galleryItems = [
         title: 'Restauro da fonte Mãe D\'Água',
         location: 'Figueiredo',
         intervention: 'Trabalhos de conservação e restauro.',
-        image: '/uploads/fonte1.jpg', // Placeholder
+        image: '/uploads/fonte_MaeDagua.jpeg',
         type: 'Património Local',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+M%C3%A3e+D%27%C3%81gua+Figueiredo+Porto+de+M%C3%B3s'
     },
@@ -19,7 +19,7 @@ const galleryItems = [
         title: 'Restauro da fonte Quinta do André Macho',
         location: 'Tojal',
         intervention: 'Trabalhos de conservação e restauro.',
-        image: '/uploads/fonte2.jpg', // Placeholder
+        image: '/uploads/fonte2.jpg',
         type: 'Património Local',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+Quinta+do+Andr%C3%A9+Macho+Tojal+Porto+de+M%C3%B3s'
     },
@@ -28,7 +28,7 @@ const galleryItems = [
         title: 'Restauro da fonte do Castenheiro',
         location: 'Castanheiro',
         intervention: 'Trabalhos de conservação e restauro.',
-        image: '/uploads/fonte3.jpg', // Placeholder
+        image: '/uploads/fonte_Castanheiro.jpeg',
         type: 'Património Local',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+do+Castanheiro+Castanheiro+Porto+de+M%C3%B3s'
     },
@@ -37,36 +37,27 @@ const galleryItems = [
         title: 'Restauro da fonte do Rio Alcaide',
         location: 'Rio Alcaide',
         intervention: 'Trabalhos de conservação e restauro.',
-        image: '/uploads/fonte4.jpeg',
+        image: '/uploads/fonte_RioAlcaide.jpeg',
         type: 'Património Local',
-        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fonte+do+Rio+Alcaide+Rio+Alcaide+Porto+de+M%C3%B3s'
+        mapsUrl: 'https://www.google.com/maps/place/Fontan%C3%A1rio+Rio+Alcaide/@39.5949885,-8.8117858,19z/data=!4m6!3m5!1s0xd189fa052c59af5:0xcef4729c210d47d4!8m2!3d39.5946809!4d-8.8121812!16s%2Fg%2F11p_1zrsck?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D'
     },
     {
         id: 5,
-        title: 'Mercado Municipal',
+        title: 'Casa do Cantoneiro',
         location: 'Centro da Vila',
-        intervention: 'Remodelação integral do espaço interior e cobertura, modernizando as bancas de venda e melhorando as condições de higiene e conforto para comerciantes e utentes.',
-        image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?q=80&w=1200', // Placeholder
-        type: 'Equipamento Público',
-        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Mercado+Municipal+Porto+de+M%C3%B3s'
+        intervention: 'Remodelação integral do espaço com recuperação artística de autor.',
+        image: '/uploads/CasaCantoneiros.jpeg',
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/place/Fontan%C3%A1rio+Rio+Alcaide/@39.5949885,-8.8117858,19z/data=!4m6!3m5!1s0xd189fa052c59af5:0xcef4729c210d47d4!8m2!3d39.5946809!4d-8.8121812!16s%2Fg%2F11p_1zrsck?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D'
     },
     {
         id: 6,
-        title: 'Largo do Rossio',
-        location: 'Alqueidão da Serra',
-        intervention: 'Requalificação urbanística com nova pavimentação em calçada portuguesa, reorganização do estacionamento e instalação de novo mobiliário urbano.',
-        image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1200', // Placeholder
-        type: 'Urbanismo',
-        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Largo+do+Rossio+Alqueid%C3%A3o+da+Serra+Porto+de+M%C3%B3s'
-    },
-    {
-        id: 7,
-        title: 'Igreja de São Pedro',
-        location: 'Porto de Mós',
-        intervention: 'Recuperação da fachada principal e limpeza de cantarias, preservando os elementos arquitetónicos originais do período barroco.',
-        image: 'https://images.unsplash.com/photo-1548690312-e3b507d17a12?q=80&w=1200', // Placeholder
-        type: 'Património Religioso',
-        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Igreja+de+S%C3%A3o+Pedro+Porto+de+M%C3%B3s'
+        title: 'Restauro da fonte das Eiras da Lagoa',
+        location: 'Eiras da Lagoa',
+        intervention: 'Trabalhos de conservação e restauro.',
+        image: '/uploads/fonte_EirasLagoaI.jpeg',
+        type: 'Património Local',
+        mapsUrl: 'https://www.google.com/maps/place/Fontan%C3%A1rio+Rio+Alcaide/@39.5949885,-8.8117858,19z/data=!4m6!3m5!1s0xd189fa052c59af5:0xcef4729c210d47d4!8m2!3d39.5946809!4d-8.8121812!16s%2Fg%2F11p_1zrsck?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D'
     }
 ]
 
