@@ -1,4 +1,4 @@
-import { GraduationCap, Leaf, Building2, Heart, HelpCircle, Truck, Trees, FileText, Baby, Dumbbell, Drama, Paintbrush, Headset, Skull, Castle } from 'lucide-react'
+import { GraduationCap, Baby, Dumbbell, Drama, Paintbrush, Headset, Skull, Castle, type LucideIcon } from 'lucide-react'
 
 export interface ServiceDocument {
     label: string;
@@ -9,7 +9,7 @@ export interface Service {
     id: number;
     slug: string;
     title: string;
-    icon: any;
+    icon: LucideIcon;
     description: string;
     details: string;
     longDescription: string;
@@ -212,11 +212,11 @@ export const services: Service[] = [
             <p class="mb-4">O valor dos vouchers, após aprovação do executivo, são entregues na secretaria da Junta de Freguesia contra apresentação das respetivas faturas dessas despesas.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000"
+            "/uploads/CapaNatalidade.png"
         ],
         documents: [
-            { label: "Regulamento do Apoio à Natalidade", url: "#" },
-            { label: "Formulário de Candidatura", url: "#" }
+            { label: "Regulamento do Apoio à Natalidade", url: "/uploads/regulamento_apoio_natalidade_2026.pdf" },
+            { label: "Formulário de Candidatura", url: "/uploads/formulario_apoio_natalidade_2026.pdf" }
         ]
     },
 ]
