@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Freguesia - Portal Oficial",
-  description: "Website oficial da Freguesia",
+  title: "Freguesia PMs - Portal Oficial",
+  description: "Website oficial da Freguesia de Porto de Mós",
 };
 
 export default function RootLayout({

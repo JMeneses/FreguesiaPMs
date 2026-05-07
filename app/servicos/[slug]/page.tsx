@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: Props) {
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">Sobre este Serviço</h2>
                             <div
-                                className="prose prose-lg prose-headings:text-gray-900 prose-p:text-gray-800 prose-a:text-primary max-w-none"
+                                className="prose prose-lg prose-headings:text-gray-900 prose-p:text-gray-800 max-w-none"
                                 dangerouslySetInnerHTML={{ __html: service.longDescription }}
                             />
                         </div>

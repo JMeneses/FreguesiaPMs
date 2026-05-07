@@ -114,20 +114,13 @@ export const services: Service[] = [
         description: 'Apoio às associações culturais e recreativas da freguesia.',
         details: 'Financiamento, apoio logístico e cedência de espaços para eventos culturais.',
         longDescription: `
-            <p class="mb-4">A solidariedade é um valor central na nossa freguesia. O Gabinete de Ação Social existe para apoiar os cidadãos em situação de vulnerabilidade, garantindo que ninguém fica para trás.</p>
-            <p class="mb-4">Áreas de atuação:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Atendimento e acompanhamento social.</li>
-                <li>Banco de recursos (roupa, alimentos, mobiliário).</li>
-                <li>Apoio à população sénior (teleassistência, combate ao isolamento).</li>
-                <li>Encaminhamento para outras entidades competentes.</li>
-            </ul>
+            <p class="mb-4">A comunidade é um valor central na nossa freguesia.</p>
+            <p class="mb-4">Anualmente apoiamos as associações da freguesia dentro dos seus planos de actividades, eventos e iniciativas.</p>
         `,
         images: [
             "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000"
         ],
         documents: [
-            { label: "Formulário de Apoio Social", url: "#" }
         ]
     },
     {
@@ -190,14 +183,14 @@ export const services: Service[] = [
                 <li>Reforço muscular.</li>
                 <li>Convívio e bem-estar emocional.</li>
             </ul>
-            <p>Inscrições na secretaria da Junta de Freguesia.</p>
+            <p>As inscrições são realizadas com a professora no dia das aulas.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000"
+            "/uploads/capa_ginastica_senior.png"
         ],
         documents: [
-            { label: "Ficha de Inscrição na Ginástica Sénior", url: "/uploads/ficha_inscricao_ginastica_senior_porto_de_mos.pdf" },
-            { label: "Calendário de Aulas", url: "#" }
+            { label: "Ficha de Inscrição na Ginástica Sénior", url: "/uploads/ficha_inscricao_ginastica_senior.pdf" },
+            { label: "Calendário de Aulas", url: "/uploads/calendario_de_aulas_ginastica_senior.pdf" }
         ]
     },
     {
@@ -212,7 +205,7 @@ export const services: Service[] = [
             <p class="mb-4">O valor dos vouchers, após aprovação do executivo, são entregues na secretaria da Junta de Freguesia contra apresentação das respetivas faturas dessas despesas.</p>
         `,
         images: [
-            "/uploads/CapaNatalidade.png"
+            "/uploads/capa_natalidade.png"
         ],
         documents: [
             { label: "Regulamento do Apoio à Natalidade", url: "/uploads/regulamento_apoio_natalidade_2026.pdf" },
