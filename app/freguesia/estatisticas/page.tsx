@@ -32,30 +32,6 @@ const stats = [
         icon: Users,
         color: 'text-blue-500',
         bg: 'bg-blue-50'
-    },
-    {
-        id: 5,
-        label: 'Restauração',
-        value: '30',
-        icon: Utensils,
-        color: 'text-red-500',
-        bg: 'bg-red-100'
-    },
-    {
-        id: 6,
-        label: 'Escolas',
-        value: '5',
-        icon: School,
-        color: 'text-indigo-600',
-        bg: 'bg-indigo-100'
-    },
-    {
-        id: 7,
-        label: 'Associações',
-        value: '17',
-        icon: Building,
-        color: 'text-emerald-600',
-        bg: 'bg-emerald-100'
     }
 ]
 

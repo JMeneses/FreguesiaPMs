@@ -27,12 +27,10 @@ export const services: Service[] = [
         details: 'Disponibilizamos diversos programas de apoio ao estudo para crianças e jovens residentes na freguesia.',
         longDescription: `
             <p class="mb-4">Acreditamos que a educação é o pilar fundamental para o desenvolvimento da nossa comunidade. Por isso, a Junta de Freguesia investe em diversos programas de apoio aos estudantes e às suas famílias.</p>
-            <p class="mb-4">Os nossos serviços incluem:</p>
+            <p class="mb-4">Os nossos apoios incluem:</p>
             <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Bolsas de mérito para os melhores alunos do ensino secundário e superior.</li>
-                <li>Apoio na aquisição de material escolar para famílias carenciadas.</li>
-                <li>Atividades de tempos livres (ATL) durante as férias escolares.</li>
-                <li>Parcerias com centros de explicações locais.</li>
+                <li>Aulas de Inglês (AECs).</li>
+                <li>Iniciação ao Judo</li>
             </ul>
             <p>Estamos em constante articulação com o Agrupamento de Escolas para identificar necessidades e promover o sucesso escolar de todos os jovens da freguesia.</p>
         `,
@@ -78,33 +76,13 @@ export const services: Service[] = [
         description: 'Criámos um serviço de proximidade para o atendimento e apoio dos fregueses.',
         details: 'Emissão de certidões e atestados, apoio social.',
         longDescription: `
-            <p class="mb-4">A Junta de Freguesia disponibiliza um serviço de atendimento ao cidadão, com o objetivo de prestar apoio e informação aos fregueses em diversas matérias.</p>
-            <p class="mb-4">Disponibilizamos a emissão de:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li> Declarações (Várias) </li>
-                <li> Atestados de Residência </li>
-                <li> Atestados de insuficiência económica </li>
-                <li> Certidões (Várias) </li>
-                <li> Provas de Vida </li>
-                <li> Confirmações de Agregado Familiar </li>
-                <li> Termos de Justificação Administrativa </li>
-                <li> Termo de Identidade </li>
-                <li> Atestados de eleitor </li>
-                <li> Recenseamento Eleitoral </li>
-                <li> Licenciamento de Canídeos e Gatídeos </li>
-                <li> Autenticação de Fotocópias </li>
-                <li> Certidão de Documentos </li>
-                <li> Gestão do Cemitério Paroquial </li>
-                <li> Serviço de Pagamentos (água, luz, telefone, impostos, entre outros) </li>
-            </ul>
+            <p class="mb-4">A Junta de Freguesia disponibiliza um serviço de Atendimento ao Cidadão dedicado a apoiar a população nas mais diversas necessidades do dia a dia. Neste espaço, os fregueses podem obter informações, tratar de documentação, solicitar serviços, apresentar pedidos ou esclarecer dúvidas relacionadas com as competências da Junta de Freguesia.</p>
+            <p class="mb-4">O atendimento é realizado de forma próxima, acessível e eficiente, procurando garantir um serviço de qualidade e uma resposta adequada às necessidades da comunidade. A Junta mantém-se disponível para apoiar todos os cidadãos, promovendo uma relação de confiança, transparência e proximidade com a população.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1000"
+            "/uploads/capa_atendimento.png"
         ],
-        documents: [
-            { label: "Requerimento Geral", url: "#" },
-            { label: "Pedido de Licenciamento de Obra", url: "#" }
-        ]
+        documents: []
     },
     {
         id: 4,
@@ -114,14 +92,13 @@ export const services: Service[] = [
         description: 'Apoio às associações culturais e recreativas da freguesia.',
         details: 'Financiamento, apoio logístico e cedência de espaços para eventos culturais.',
         longDescription: `
-            <p class="mb-4">A comunidade é um valor central na nossa freguesia.</p>
-            <p class="mb-4">Anualmente apoiamos as associações da freguesia dentro dos seus planos de actividades, eventos e iniciativas.</p>
+            <p class="mb-4">A comunidade é um valor central na nossa freguesia, sendo entendida como a base de toda a dinâmica social, cultural e associativa do território.</p>
+            <p class="mb-4">Todos os anos, a Junta de Freguesia procura reforçar esse compromisso através do apoio contínuo às associações locais, colaborando com as mesmas no desenvolvimento dos seus planos de atividades. Este apoio estende-se à organização de eventos, iniciativas culturais, desportivas e recreativas, bem como a outras ações que promovam a participação ativa da população e o fortalecimento dos laços comunitários. Desta forma, contribui-se para uma freguesia mais coesa, participativa e dinâmica.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000"
+            "/uploads/capa_tradicoes.png"
         ],
-        documents: [
-        ]
+        documents: []
     },
     {
         id: 5,
@@ -131,17 +108,15 @@ export const services: Service[] = [
         description: 'Gestão dos cemitérios da freguesia.',
         details: 'Cuidado permanente com os cemitérios da nossa freguesia.',
         longDescription: `
-            <p class="mb-4">Os espaços verdes são essenciais para a qualidade de vida. Mantemos e qualificamos os nossos parques e jardins para que sejam locais de lazer e convívio para todas as idades.</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Poda e tratamento de árvores.</li>
-                <li>Manutenção de jardins e canteiros.</li>
-                <li>Instalação e reparação de mobiliário urbano em áreas verdes.</li>
-            </ul>
+            <p class="mb-4">A Junta de Freguesia de Porto de Mós é responsável pela gestão, organização e manutenção do Cemitério da Fonte do Oleiro, garantindo o cumprimento das normas legais e o bom funcionamento do espaço. Compete-lhe autorizar e registar inumações, exumações, trasladações e depósitos de cinzas, emitir concessões de sepulturas, jazigos e columbários, assegurar a limpeza e conservação das áreas comuns e fiscalizar obras e construções funerárias. A Junta pode ainda aplicar sanções em caso de incumprimento do regulamento e intervir em situações de abandono ou falta de manutenção das concessões.</p>
+            <p class="mb-4">O cemitério destina-se principalmente a residentes e naturais das localidades de Fonte dos Marcos, Carrasqueira, Fonte do Oleiro, Mendigos e Ribeira de Baixo. Funciona diariamente, entre as 08h30 e as 20h00 no período de verão e entre as 08h30 e as 17h30 no inverno. Todos os pedidos relacionados com serviços funerários devem ser tratados junto da Secretaria da Junta de Freguesia, estando sujeitos às taxas definidas na tabela em vigor.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1496347646636-ea47f7d6b37b?q=80&w=1000"
+            "/uploads/capa_cemiterio.png"
         ],
-        documents: []
+        documents: [
+            {label: "Regulamento do Cemitério da Fonte do Oleiro", url: "/uploads/regulamento_cemiterio_fonte_do_oleiro.pdf"}
+        ]
     },
     {
         id: 6,
