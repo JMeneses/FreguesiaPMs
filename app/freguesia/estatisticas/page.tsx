@@ -1,4 +1,4 @@
-import { Users, Vote, Briefcase, Utensils, Baby, School, Building } from 'lucide-react'
+import { Users, Vote, PersonStanding } from 'lucide-react'
 
 const stats = [
     {
@@ -21,7 +21,7 @@ const stats = [
         id: 3,
         label: 'Mulheres',
         value: '49%',
-        icon: Baby,
+        icon: PersonStanding,
         color: 'text-pink-500',
         bg: 'bg-pink-100'
     },
@@ -29,7 +29,7 @@ const stats = [
         id: 4,
         label: 'Homens',
         value: '51%',
-        icon: Users,
+        icon: PersonStanding,
         color: 'text-blue-500',
         bg: 'bg-blue-50'
     }

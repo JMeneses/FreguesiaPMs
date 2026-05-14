@@ -1,4 +1,4 @@
-import { GraduationCap, Baby, Dumbbell, Drama, Paintbrush, Headset, Skull, Castle, type LucideIcon } from 'lucide-react'
+import { GraduationCap, Baby, Dumbbell, Drama, Paintbrush, Headset, Skull, Church, Castle, type LucideIcon } from 'lucide-react'
 
 export interface ServiceDocument {
     label: string;
@@ -26,22 +26,12 @@ export const services: Service[] = [
         description: 'Apoio escolar, bolsas de estudo e atividades extracurriculares.',
         details: 'Disponibilizamos diversos programas de apoio ao estudo para crianças e jovens residentes na freguesia.',
         longDescription: `
-            <p class="mb-4">Acreditamos que a educação é o pilar fundamental para o desenvolvimento da nossa comunidade. Por isso, a Junta de Freguesia investe em diversos programas de apoio aos estudantes e às suas famílias.</p>
-            <p class="mb-4">Os nossos apoios incluem:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Aulas de Inglês (AECs).</li>
-                <li>Iniciação ao Judo</li>
-            </ul>
-            <p>Estamos em constante articulação com o Agrupamento de Escolas para identificar necessidades e promover o sucesso escolar de todos os jovens da freguesia.</p>
+            <p class="mb-4">São da responsabilidade da Junta de Freguesia de Porto de Mós diversas tarefas de apoio e acompanhamento das escolas da freguesia, assegurando melhores condições para o funcionamento diário dos espaços educativos. Entre essas responsabilidades encontram-se o fornecimento regular de materiais de limpeza, essenciais para garantir a higiene, segurança e bem-estar de alunos, professores e restantes profissionais, bem como a realização de pequenas intervenções de manutenção e reparação, contribuindo para a conservação e bom estado das instalações escolares.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000",
-            "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000"
+            "/uploads/capa_educacao.png"
         ],
-        documents: [
-            { label: "Regulamento de Bolsas de Estudo", url: "#" },
-            { label: "Ficha de Inscrição ATL", url: "#" }
-        ]
+        documents: []
     },
     {
         id: 2,
@@ -51,22 +41,13 @@ export const services: Service[] = [
         description: 'Mantemos uma equipa de limpeza e manutenção que trabalha diariamente para garantir espaços públicos limpos e cuidados.',
         details: 'Limpeza urbana, manutenção de vias secundárias e escoamento de águas pluviais.',
         longDescription: `
-            <p class="mb-4">A preservação do ambiente e a limpeza dos espaços públicos são prioridades para a nossa Junta de Freguesia. Trabalhamos diariamente para garantir que as nossas ruas, praças e jardins se mantêm limpos e cuidados.</p>
-            <p class="mb-4">As nossas iniciativas incluem:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>Recolha seletiva de resíduos e monstros (mediante agendamento).</li>
-                <li>Manutenção e limpeza das vias públicas.</li>
-                <li>Campanhas de sensibilização ambiental nas escolas.</li>
-                <li>Implementação de ilhas ecológicas em pontos estratégicos.</li>
-            </ul>
+            <p class="mb-4">A Junta de Freguesia de Porto de Mós compromete-se em manter os espaços públicos em boas condições para a melhor utilização pelos cidadãos. São de responsabilidade da Junta o arranjo de caminhos de terra e a limpeza de valetas.</p>
+            <p class="mb-4">Para a recolha de monstros, monos ou verdes, deve-se contactar a RodoLixo no contacto 935 655 294.</p>
         `,
         images: [
-            "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000",
+            "/uploads/capa_limpeza.png"
         ],
-        documents: [
-            { label: "Calendário de Recolha de Lixo", url: "#" },
-            { label: "Guia de Boas Práticas Ambientais", url: "#" }
-        ]
+        documents: []
     },
     {
         id: 3,
@@ -104,7 +85,7 @@ export const services: Service[] = [
         id: 5,
         slug: 'cemiterios',
         title: 'Cemitérios',
-        icon: Skull,
+        icon: Church,
         description: 'Gestão dos cemitérios da freguesia.',
         details: 'Cuidado permanente com os cemitérios da nossa freguesia.',
         longDescription: `

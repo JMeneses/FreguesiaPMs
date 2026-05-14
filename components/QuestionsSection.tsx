@@ -23,7 +23,7 @@ const faqs = [
     },
     {
         question: 'Como posso reportar um buraco no pavimento de uma via pública?',
-        answer: 'Se a estrada for alcatroada, deve reportar essa situação directamente à Câmara Municipal de Porto de Mós através da plataforma online de ocorrências. Se a estrada for de terra, deve reportar essa situação directamente à Junta de Freguesia contactando a secretaria.'
+        answer: 'Se a estrada for alcatroada, deve reportar essa situação directamente à Câmara Municipal de Porto de Mós. Se a estrada for de terra, deve reportar essa situação directamente à Junta de Freguesia contactando a secretaria.'
     },
     {
         question: 'Quais os procedimentos para obter um atestado ou declaração?',
@@ -31,7 +31,7 @@ const faqs = [
     },
     {
         question: 'Como funciona a recolha de monstros (lixo volumoso) na Freguesia?',
-        answer: 'A recolha de monstros é efetuada gratuitamente às terças-feiras. Deve fazer o agendamento prévio até ao dia anterior através do número de telefone da junta.'
+        answer: 'A recolha de monstros, monos ou verdes é realizada de forma gratuita pela RodoLixo e deve ser pedido através do contacto 935 655 294.'
     },
     {
         question: 'Para realizar uma queima ou queimada, como devo proceder?',
@@ -46,7 +46,7 @@ const faqs = [
                 >
                     Serviço de Queimas e Queimadas do ICNF
                     <ExternalLink size={14} />
-                </a>.
+                </a>, ou contactar directamente a Junta de Freguesia.
             </>
         )
     },
@@ -63,7 +63,7 @@ const faqs = [
                 >
                     Livro de Reclamações
                     <ExternalLink size={14} />
-                </a>.
+                </a>, ou realizar o preenchimento de um formulário da Junta de Freguesia.
             </>
         )
     },
@@ -80,7 +80,7 @@ const faqs = [
                 >
                     Dia da Defesa Nacional
                     <ExternalLink size={14} />
-                </a>.
+                </a>, ou consultar o edital na Junta de Freguesia.
             </>
         )
     }

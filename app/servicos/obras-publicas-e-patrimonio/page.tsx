@@ -25,7 +25,7 @@ const galleryItems = [
     },
     {
         id: 3,
-        title: 'Restauro da fonte do Castenheiro',
+        title: 'Restauro da fonte do Castanheiro',
         location: 'Castanheiro',
         intervention: 'Trabalhos de conservação e restauro.',
         image: '/uploads/fonte_Castanheiro.jpeg',
@@ -48,7 +48,7 @@ const galleryItems = [
         intervention: 'Remodelação integral do espaço com recuperação artística de autor.',
         image: '/uploads/CasaCantoneiros.jpeg',
         type: 'Património Local',
-        mapsUrl: 'https://www.google.com/maps/place/Fontan%C3%A1rio+Rio+Alcaide/@39.5949885,-8.8117858,19z/data=!4m6!3m5!1s0xd189fa052c59af5:0xcef4729c210d47d4!8m2!3d39.5946809!4d-8.8121812!16s%2Fg%2F11p_1zrsck?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D'
+        mapsUrl: 'https://www.google.com/maps/place/Casa+do+cantoneiro/@39.5926934,-8.8185318,20z/data=!4m6!3m5!1s0xd189fce113a6815:0xfaf1cdbf978f7aff!8m2!3d39.592887!4d-8.818565!16s%2Fg%2F11rgzxk0hh?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D'
     },
     {
         id: 6,
