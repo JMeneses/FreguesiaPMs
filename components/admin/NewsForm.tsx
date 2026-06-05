@@ -1,10 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
+import { useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
 
 interface NewsFormProps {
-    action: (formData: FormData) => Promise<void>
+    action?: (formData: FormData) => Promise<void>
+    editId?: string
     initialData?: {
         title: string
         content: string
@@ -13,15 +15,51 @@ interface NewsFormProps {
     }
 }
 
-export default function NewsForm({ action, initialData }: NewsFormProps) {
+export default function NewsForm({ action, editId, initialData }: NewsFormProps) {
     const [existingImages, setExistingImages] = useState<string[]>(initialData?.images || [])
+    const [error, setError] = useState<string | null>(null)
+    const [isPending, startTransition] = useTransition()
+    const router = useRouter()
 
     const removeExistingImage = (src: string) => {
         setExistingImages((prev) => prev.filter((img) => img !== src))
     }
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        if (!editId) return
+        e.preventDefault()
+        setError(null)
+        const formData = new FormData(e.currentTarget)
+        startTransition(async () => {
+            try {
+                const res = await fetch(`/api/admin/noticias/${editId}`, {
+                    method: 'POST',
+                    body: formData,
+                })
+                if (!res.ok) {
+                    const data = await res.json().catch(() => ({}))
+                    setError(data.error || `Erro ${res.status}`)
+                    return
+                }
+                router.push('/admin/noticias')
+            } catch {
+                setError('Erro ao guardar a notícia. Tente novamente.')
+            }
+        })
+    }
+
     return (
-        <form action={action} className="space-y-6 max-w-2xl bg-white p-6 rounded-lg shadow-sm">
+        <form
+            action={editId ? undefined : action}
+            onSubmit={editId ? handleSubmit : undefined}
+            className="space-y-6 max-w-2xl bg-white p-6 rounded-lg shadow-sm"
+        >
+            {error && (
+                <div className="rounded-md bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                    {error}
+                </div>
+            )}
+
             <div>
                 <label htmlFor="title" className="block text-sm font-medium text-gray-700">Título</label>
                 <input
@@ -137,10 +175,11 @@ export default function NewsForm({ action, initialData }: NewsFormProps) {
             <div className="flex justify-end">
                 <button
                     type="submit"
-                    className="bg-primary text-white px-4 py-2 rounded hover:bg-[#2f5856] transition-colors"
+                    disabled={isPending}
+                    className="bg-primary text-white px-4 py-2 rounded hover:bg-[#2f5856] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     aria-label="Guardar notícia"
                 >
-                    Guardar
+                    {isPending ? 'A guardar…' : 'Guardar'}
                 </button>
             </div>
         </form>
