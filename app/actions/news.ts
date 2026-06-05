@@ -20,6 +20,10 @@ export async function createNews(formData: FormData) {
         imageUrl = `/api/uploads/${filename}`
     }
 
+    if (!imageUrl || imageUrl.trim() === '') {
+        imageUrl = null
+    }
+
     // Handle gallery images
     if (galleryFiles && galleryFiles.length > 0) {
         for (const file of galleryFiles) {
@@ -71,6 +75,10 @@ export async function updateNews(id: string, formData: FormData) {
         const filename = `news-${Date.now()}-${imageFile.name}`
         await objectStorage.uploadFile(imageFile, filename)
         imageUrl = `/api/uploads/${filename}`
+    }
+
+    if (!imageUrl || imageUrl.trim() === '') {
+        imageUrl = null
     }
 
     const newImages: string[] = []

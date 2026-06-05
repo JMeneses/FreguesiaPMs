@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+const replitDomains = (process.env.REPLIT_DOMAINS || '')
+  .split(',')
+  .map((d) => d.trim())
+  .filter(Boolean)
+
 const nextConfig: NextConfig = {
 
   images: {
@@ -17,7 +22,14 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
       bodySizeLimit: '100mb',
-      allowedOrigins: ['*.replit.dev', '*.worf.replit.dev', '*.janeway.replit.dev', '*.replit.app', '*.repl.co'],
+      allowedOrigins: [
+        ...replitDomains,
+        '*.replit.dev',
+        '*.worf.replit.dev',
+        '*.janeway.replit.dev',
+        '*.replit.app',
+        '*.repl.co',
+      ],
     },
   },
   allowedDevOrigins: ['*.replit.dev', '*.worf.replit.dev', '*.janeway.replit.dev'],

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { X } from 'lucide-react'
 
 interface NewsFormProps {
@@ -39,13 +38,11 @@ export default function NewsForm({ action, initialData }: NewsFormProps) {
                 <label htmlFor="file" className="block text-sm font-medium text-gray-700">Imagem de Capa</label>
                 {initialData?.imageUrl && (
                     <div className="mt-2 mb-3">
-                        <div className="relative w-48 h-32 rounded-md overflow-hidden bg-gray-100 border">
-                            <Image
+                        <div className="w-48 h-32 rounded-md overflow-hidden bg-gray-100 border flex items-center justify-center">
+                            <img
                                 src={initialData.imageUrl}
                                 alt="Imagem de capa atual"
-                                fill
-                                className="object-contain"
-                                sizes="192px"
+                                className="max-w-full max-h-full object-contain"
                             />
                         </div>
                         <p className="text-xs text-gray-500 mt-1">Imagem de capa atual. Selecione um ficheiro abaixo para a substituir.</p>
@@ -97,13 +94,11 @@ export default function NewsForm({ action, initialData }: NewsFormProps) {
                         <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                             {existingImages.map((src) => (
                                 <div key={src} className="relative group">
-                                    <div className="relative w-full h-24 rounded-md overflow-hidden bg-gray-100 border">
-                                        <Image
+                                    <div className="w-full h-24 rounded-md overflow-hidden bg-gray-100 border flex items-center justify-center">
+                                        <img
                                             src={src}
                                             alt="Imagem da galeria"
-                                            fill
-                                            className="object-contain"
-                                            sizes="120px"
+                                            className="max-w-full max-h-full object-contain"
                                         />
                                     </div>
                                     <button
