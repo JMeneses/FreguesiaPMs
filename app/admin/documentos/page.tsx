@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma'
 import { Button } from '@/components/ui/Button'
 import { Folder as FolderIcon, FileText, Trash2, FolderPlus, Upload, ChevronRight, CornerLeftUp } from 'lucide-react'
 import DocumentUploadForm from '@/components/admin/DocumentUploadForm'
-import { createFolder, uploadDocument, deleteFolder, deleteDocument, getFolderAncestry } from '@/app/actions/documents'
+import { createFolder, deleteFolder, deleteDocument, getFolderAncestry } from '@/app/actions/documents'
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = 'force-dynamic'
