@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
 
 interface NewsFormProps {
-    action?: (formData: FormData) => Promise<void>
     editId?: string
     initialData?: {
         title: string
@@ -15,7 +14,7 @@ interface NewsFormProps {
     }
 }
 
-export default function NewsForm({ action, editId, initialData }: NewsFormProps) {
+export default function NewsForm({ editId, initialData }: NewsFormProps) {
     const [existingImages, setExistingImages] = useState<string[]>(initialData?.images || [])
     const [error, setError] = useState<string | null>(null)
     const [isPending, startTransition] = useTransition()
@@ -26,13 +25,13 @@ export default function NewsForm({ action, editId, initialData }: NewsFormProps)
     }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        if (!editId) return
         e.preventDefault()
         setError(null)
         const formData = new FormData(e.currentTarget)
+        const url = editId ? `/api/admin/noticias/${editId}` : '/api/admin/noticias'
         startTransition(async () => {
             try {
-                const res = await fetch(`/api/admin/noticias/${editId}`, {
+                const res = await fetch(url, {
                     method: 'POST',
                     body: formData,
                 })
@@ -50,8 +49,7 @@ export default function NewsForm({ action, editId, initialData }: NewsFormProps)
 
     return (
         <form
-            action={editId ? undefined : action}
-            onSubmit={editId ? handleSubmit : undefined}
+            onSubmit={handleSubmit}
             className="space-y-6 max-w-2xl bg-white p-6 rounded-lg shadow-sm"
         >
             {error && (
