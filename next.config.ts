@@ -8,6 +8,7 @@ const replitDomains = (process.env.REPLIT_DOMAINS || '')
 const nextConfig: NextConfig = {
 
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
