@@ -1,0 +1,2 @@
+- [Next.js 16 blockCrossSite](nextjs16-block-cross-site.md) — allowedDevOrigins applies in PRODUCTION too; must include all public origins (*.replit.app etc.)
+- [Server action redirect pattern](server-action-redirect.md) — redirect() must be OUTSIDE try-catch in server actions; check `'digest' in err` to re-throw Next.js internals

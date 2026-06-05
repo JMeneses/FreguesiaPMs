@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: '100mb',
       allowedOrigins: [
+        'freguesiapms.replit.app',
         ...replitDomains,
         '*.replit.dev',
         '*.worf.replit.dev',
@@ -33,7 +34,7 @@ const nextConfig: NextConfig = {
       ],
     },
   },
-  allowedDevOrigins: ['*.replit.dev', '*.worf.replit.dev', '*.janeway.replit.dev'],
+  allowedDevOrigins: ['*.replit.dev', '*.worf.replit.dev', '*.janeway.replit.dev', '*.replit.app', '*.repl.co'],
 };
 
 export default nextConfig;
