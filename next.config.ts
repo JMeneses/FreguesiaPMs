@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: '20mb',
+      bodySizeLimit: '100mb',
     },
   },
   allowedDevOrigins: ['*.replit.dev', '*.worf.replit.dev', '*.janeway.replit.dev'],

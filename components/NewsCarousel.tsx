@@ -29,12 +29,12 @@ export default function NewsCarousel({ images, title }: NewsCarouselProps) {
             <div className="overflow-hidden rounded-xl shadow-lg" ref={emblaRef}>
                 <div className="flex">
                     {images.map((src, index) => (
-                        <div key={index} className="flex-[0_0_100%] min-w-0 relative h-[400px] md:h-[600px]">
+                        <div key={index} className="flex-[0_0_100%] min-w-0 relative h-[400px] md:h-[600px] bg-gray-100">
                             <Image
                                 src={src}
                                 alt={`${title} - Imagem ${index + 1}`}
                                 fill
-                                className="object-cover"
+                                className="object-contain"
                             />
                         </div>
                     ))}
