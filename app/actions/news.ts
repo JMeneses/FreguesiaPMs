@@ -65,6 +65,7 @@ export async function updateNews(id: string, formData: FormData) {
     const imageFile = formData.get('imageFile') as File | null
 
     const galleryFiles = formData.getAll('galleryFiles') as File[]
+    const keptImages = formData.getAll('existingImages') as string[]
 
     if (imageFile && imageFile.size > 0) {
         const filename = `news-${Date.now()}-${imageFile.name}`
@@ -87,16 +88,19 @@ export async function updateNews(id: string, formData: FormData) {
         throw new Error('Missing required fields')
     }
 
+    // Only keep images that actually belonged to this record (guard against tampered posts)
+    const existing = await prisma.news.findUnique({
+        where: { id },
+        select: { images: true },
+    })
+    const previousImages = existing?.images || []
+    const validKeptImages = keptImages.filter((img) => previousImages.includes(img))
+
     const dataToUpdate: any = {
         title,
         content,
         imageUrl,
-    }
-
-    if (newImages.length > 0) {
-        dataToUpdate.images = {
-            push: newImages
-        }
+        images: [...validKeptImages, ...newImages],
     }
 
     // Not updating slug to preserve URLs
@@ -104,6 +108,15 @@ export async function updateNews(id: string, formData: FormData) {
         where: { id },
         data: dataToUpdate
     })
+
+    // After the DB is successfully updated, clean up files that are no longer referenced
+    const removedImages = previousImages.filter((img) => !validKeptImages.includes(img))
+    for (const img of removedImages) {
+        if (img.startsWith('/api/uploads/')) {
+            const filename = img.replace('/api/uploads/', '')
+            await objectStorage.deleteFile(filename)
+        }
+    }
 
     revalidatePath('/admin/noticias')
     revalidatePath('/noticias')
