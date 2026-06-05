@@ -1,9 +1,13 @@
+import { redirect } from 'next/navigation'
+import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = 'force-dynamic'
 
 export default async function AdminDashboard() {
+    const session = await auth()
+    if (!session) redirect('/admin/login')
     const newsCount = await prisma.news.count()
     const documentsCount = await prisma.document.count()
     const foldersCount = await prisma.folder.count()

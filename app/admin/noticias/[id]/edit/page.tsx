@@ -1,7 +1,8 @@
+import { redirect, notFound } from 'next/navigation'
+import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import NewsForm from '@/components/admin/NewsForm'
 import { updateNews } from '@/app/actions/news'
-import { notFound } from 'next/navigation'
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = 'force-dynamic'
@@ -11,6 +12,9 @@ interface EditNewsPageProps {
 }
 
 export default async function EditNewsPage({ params }: EditNewsPageProps) {
+    const session = await auth()
+    if (!session) redirect('/admin/login')
+
     const { id } = await params
     const news = await prisma.news.findUnique({
         where: { id }

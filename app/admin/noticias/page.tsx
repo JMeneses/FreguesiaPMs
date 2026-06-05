@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import { Button } from '@/components/ui/Button'
 import { Plus, Edit, Trash2 } from 'lucide-react'
@@ -8,6 +10,9 @@ import { deleteNews } from '@/app/actions/news'
 export const dynamic = 'force-dynamic'
 
 export default async function NewsListPage() {
+    const session = await auth()
+    if (!session) redirect('/admin/login')
+
     const news = await prisma.news.findMany({
         orderBy: { createdAt: 'desc' }
     })
